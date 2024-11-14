@@ -33,6 +33,53 @@ body, html {
     font-weight: bold;
     margin: 10px 0;
 }
+.animated-text{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.animated-text span{
+    position: relative;
+}
+
+.animated-text span::before{
+    content: 'From Now ON.';
+    color: #ffacbc ;
+    animation: words 20s infinite;
+}
+
+.animated-text span::after{
+    content: '';
+    background-color: #ffffff;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 2px solid rgb(0, 0, 0);
+    right: -5px;
+    animation: cursor .6s infinite, typing 15s steps(14) ;
+}
+
+@keyframes cursor {
+    to {
+        border-left: 2px solid #fff;
+    }
+    
+}
+@keyframes words {
+    0%, 100% {
+        content:'From Now ON.'
+    }
+}
+
+@keyframes typing {
+    10% , 15%, 20%, 25%, 30%, 35%, 40%, 45%, 50%, 55%, 60%, 65%, 70%, 75%, 80%, 85%, 90%, 95% {
+        width: 0;
+    }
+    5% , 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% {
+        width: calc(100%+8px);
+    }
+}
 
 .record-selection {
     display: flex;
@@ -54,3 +101,5 @@ body, html {
 .logo img {
     width: 60px;
 }
+
+
