@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffacbc;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 1830px;
+    padding: 300px;
+    background-color: #fff;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.container h2 {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: normal;
+}
+
+.container h1 {
+    font-size: 3rem;
+    color: #ffacbc;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.record-selection {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.record-selection img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.logo {
+    margin-top: 20px;
+}
+
+.logo img {
+    width: 60px;
+}
