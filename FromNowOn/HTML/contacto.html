@@ -5,14 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Contacto</title>
-        
+    <script src="../particlesjs-config.json"></script> <!-- Asegúrate de incluir particles.js -->
 </head>
 <body>
+
+<!-- Contenedor de partículas -->
+<div id="particles-js" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;"></div>
 
 <section class="contact">
     <div class="contact-container">
         <h2>CONTACTO</h2>
         <p class="texto">CREATIVE FILM PRODUCTION & EVERYTHING IN BETWEEN</p>
+        
+        <!-- Contenedor de la imagen, asegurando que está encima de las partículas -->
         <div class="contact-info">
             <a>
                 <img src="../IMG/Logo_Transparent_FROMNOWON.png"/>
@@ -48,8 +53,8 @@
             </a>
         </div>
         <div>
-        <h2 class="texto2">info@fromnowon.it</h2>
-    </div>
+            <h2 class="texto2">info@fromnowon.it</h2>
+        </div>
     </div>
     <aside class="sidebar">
         <a href="#home">HOME</a>
@@ -57,5 +62,7 @@
         <a href="#contact">CONTACT</a>
     </aside>
 </section>
+
+
 </body>
 </html>
