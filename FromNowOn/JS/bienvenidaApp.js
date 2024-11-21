@@ -7,70 +7,60 @@ document.addEventListener("DOMContentLoaded", () => {
         if (index < text.length) {
             animatedText.textContent += text.charAt(index);
             index++;
-            setTimeout(typeText, 100); // Velocidad de escritura
+            setTimeout(typeText, 100);
         }
     }
 
-    typeText(); // Inicia la animación
+    typeText();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    const records = document.querySelectorAll(".record"); // Selecciona todos los discos
-    const rotationSpeed = 3; // Velocidad de rotación (grados por frame)
-    let audioEnabled = false; // Control global para habilitar el audio
+    const records = document.querySelectorAll(".record");
+    const rotationSpeed = 3;
+    let audioEnabled = false;
 
-    // Toast para activar audio
     const toast = document.getElementById("audio-permission-toast");
     const acceptButton = document.getElementById("accept-audio");
 
     acceptButton.addEventListener("click", () => {
-        audioEnabled = true; // Permite el audio
-        toast.style.display = "none"; // Oculta el mensaje flotante
+        audioEnabled = true;
+        toast.style.display = "none";
     });
 
-    // Función de rotación y hover con audio
     records.forEach((record) => {
-        let rotation = 0; // Ángulo inicial de rotación
-        let isHovered = false; // Verifica si el mouse está sobre el disco
-        const audio = new Audio(record.getAttribute("data-audio")); // Carga el archivo de audio asociado
+        let rotation = 0; 
+        let isHovered = false;
+        const audio = new Audio(record.getAttribute("data-audio")); 
 
         const rotate = () => {
             if (!isHovered) {
-                rotation += rotationSpeed; // Incrementa el ángulo solo si no está en hover
-                record.style.transform = `rotate(${rotation}deg)`; // Aplica la rotación
+                rotation += rotationSpeed; 
+                record.style.transform = `rotate(${rotation}deg)`; 
             }
-            requestAnimationFrame(rotate); // Llama a la función en el próximo frame
+            requestAnimationFrame(rotate); 
         };
 
-        rotate(); // Inicia la animación
+        rotate(); 
 
-        // Al pasar el mouse: Pausa la rotación, escala y reproduce el audio si está habilitado
         record.addEventListener("mouseenter", () => {
             isHovered = true;
-            record.style.transform = `rotate(${rotation}deg) scale(1.4)`; // Rotación + Escala
+            record.style.transform = `rotate(${rotation}deg) scale(1.4)`; 
 
             if (audioEnabled) {
-                audio.currentTime = 0; // Reinicia el audio
+                audio.currentTime = 0;
                 audio.play().catch((error) => {
                     console.warn("Error al intentar reproducir el audio:", error);
                 });
             }
         });
 
-        // Al salir del mouse: Reanuda la rotación y pausa el audio
         record.addEventListener("mouseleave", () => {
             isHovered = false;
-            record.style.transform = `rotate(${rotation}deg)`; // Solo rotación
+            record.style.transform = `rotate(${rotation}deg)`;
             if (audioEnabled) {
-                audio.pause(); // Pausa el audio
-                audio.currentTime = 0; // Reinicia el audio
+                audio.pause(); 
+                audio.currentTime = 0; 
             }
         });
     });
 });
-
-
-
-
-
-

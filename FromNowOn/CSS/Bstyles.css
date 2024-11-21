@@ -16,8 +16,8 @@
       
 
         .contact h2 {
-            margin-top: rem; /* Elimina el margen superior */
-            margin-bottom: 3rem; /* Reduce el margen inferior */
+            margin-top: rem; 
+            margin-bottom: 3rem;
             color: #333;
             width: 98%;
         }   
@@ -25,26 +25,26 @@
         .texto {
             position: relative;
             top: 150px;
-            font-size: 0.8rem; /* Cambia el tamaño del texto aquí */
+            font-size: 0.8rem; 
         }
         .contact-info {
             display: flex;
-            justify-content: center; /* Centra horizontalmente */
-            align-items: center; /* Centra verticalmente */
-            height: 10cm; /* Ajusta la altura según necesites */
-            width: 100%; /* O el tamaño que desees */
+            justify-content: center; 
+            align-items: center; 
+            height: 10cm; 
+            width: 100%; 
         }
         
         .contact-info img {
-            opacity: 0.4; /* Ajusta este valor según necesites */
-            width: 600px; /* Cambia este valor al tamaño deseado */
-            height: 500px; /* Cambia este valor al tamaño deseado */
+            opacity: 0.4; 
+            width: 600px; 
+            height: 500px; 
             
         }
         .contact-count {
-            display: flex; /* Alinea los elementos hijos en una fila */
-            justify-content: center; /* Centra horizontalmente el contenedor */
-            align-items: center; /* Centra verticalmente el contenedor */
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
         }
         
         .contact-1,
@@ -52,9 +52,9 @@
         .contact-3,
         .contact-4 {
             display: flex;
-            justify-content: center; /* Centra horizontalmente */
-            align-items: center; /* Centra verticalmente */
-            height: 3.1cm; /* Altura del contenedor */
+            justify-content: center; 
+            align-items: center;
+            height: 3.1cm; 
             margin: 0.9cm;
         }
         
@@ -62,8 +62,8 @@
         .contact-2 a img,
         .contact-3 a img,
         .contact-4 a img {
-            width: 1cm; /* Cambia esto al tamaño que desees */
-            height: auto; /* Mantiene la proporción de la imagen */
+            width: 1cm;
+            height: auto; 
         }
         .contact-line{
             width: 100%;

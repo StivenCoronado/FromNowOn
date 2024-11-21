@@ -8,7 +8,6 @@ let thumbnailItems = thumbnail.querySelectorAll('.item');
 
 thumbnail.appendChild(thumbnailItems[0]);
 
-// Cambia el contenido de la función moveSlider para que sea automático
 function moveSlider(direction) {
     let sliderItems = sliderList.querySelectorAll('.item');
     let thumbnailItems = document.querySelectorAll('.thumbnail .item');
@@ -29,10 +28,9 @@ function moveSlider(direction) {
         } else {
             slider.classList.remove('prev');
         }
-    }, { once: true }); // Elimina el listener después de que se ejecute una vez
+    }, { once: true });
 }
 
-// Agrega la lógica para el cambio automático
 setInterval(() => {
     moveSlider('next');
-}, 4000); // Cambia cada 3 segundos
+}, 4000);
