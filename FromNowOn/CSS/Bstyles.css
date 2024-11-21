@@ -1,0 +1,105 @@
+       body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff00;
+        }
+
+        .contact {
+            background: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255)), url(../../assets/svg/common-bg.svg);
+            background-size: cover;
+            background-position: center;
+            
+            text-align: center;
+        }
+
+      
+
+        .contact h2 {
+            margin-top: rem; /* Elimina el margen superior */
+            margin-bottom: 3rem; /* Reduce el margen inferior */
+            color: #333;
+            width: 98%;
+        }   
+
+        .texto {
+            position: relative;
+            top: 150px;
+            font-size: 0.8rem; /* Cambia el tamaño del texto aquí */
+        }
+        .contact-info {
+            display: flex;
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center; /* Centra verticalmente */
+            height: 10cm; /* Ajusta la altura según necesites */
+            width: 100%; /* O el tamaño que desees */
+        }
+        
+        .contact-info img {
+            opacity: 0.4; /* Ajusta este valor según necesites */
+            width: 600px; /* Cambia este valor al tamaño deseado */
+            height: 500px; /* Cambia este valor al tamaño deseado */
+            
+        }
+        .contact-count {
+            display: flex; /* Alinea los elementos hijos en una fila */
+            justify-content: center; /* Centra horizontalmente el contenedor */
+            align-items: center; /* Centra verticalmente el contenedor */
+        }
+        
+        .contact-1,
+        .contact-2,
+        .contact-3,
+        .contact-4 {
+            display: flex;
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center; /* Centra verticalmente */
+            height: 3.1cm; /* Altura del contenedor */
+            margin: 0.9cm;
+        }
+        
+        .contact-1 a img,
+        .contact-2 a img,
+        .contact-3 a img,
+        .contact-4 a img {
+            width: 1cm; /* Cambia esto al tamaño que desees */
+            height: auto; /* Mantiene la proporción de la imagen */
+        }
+        .contact-line{
+            width: 100%;
+            height: 10cm;
+            margin-top: -2cm;
+            margin-bottom: cm;
+        }
+        .texto2 {
+            margin-top: -22rem; 
+            color: #333;
+            margin-bottom: -30%;
+    
+        }
+        .sidebar {
+            position: fixed;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            background-color: #000000;
+            color: #ffacbc;
+        }
+         
+        .sidebar a {
+            padding: 10px;
+            text-decoration: none;
+            color: #ffacbc;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: 1px solid #fff;
+        }
+        .sidebar a:hover {
+            background-color: #ffffff; 
+        }    
+
+      
