@@ -64,3 +64,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const records = document.querySelectorAll(".record"); // Selecciona todos los discos
+
+    records.forEach((record) => {
+        record.addEventListener("click", () => {
+            const audioSrc = record.getAttribute("data-audio"); // Obtiene la ruta del audio
+            window.location.href = `index.html?audio=${encodeURIComponent(audioSrc)}`; // Redirige al index con el audio como parámetro
+        });
+    });
+});
