@@ -1,0 +1,164 @@
+body{
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.logo{
+    width: 6%;
+}
+.group{
+    width: 90%;
+    float: right;
+    padding-top: 0%;
+    padding-right: 15%;  
+
+}
+.mision{
+    float: inline-end;
+    position: unset;
+    z-index: -1;
+}
+.vision{
+    float:left;
+    position: unset;
+    padding-left: 5%;
+}
+b{
+    color: white;
+}
+.dir-rtl {
+    direction: rtl;       /* Cambia la dirección del texto de derecha a izquierda */
+    text-align: right;  
+    color: white ;  /* Alinea el texto a la derecha del contenedor */
+  }
+
+.section-title-inline {
+    display: flex; /* Alinea elementos horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    gap: 2%; /* Espacio entre los elementos */
+    margin: 3% 0; /* Separación del resto del contenido */
+}
+
+.section-title-inline img {
+    max-width: 250px; /* Ajusta el tamaño del logo */
+    height: auto; /* Mantén proporciones */
+}
+
+.section-title-inline span {
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+  /* Carousel */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 70%;
+  margin: auto;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+}
+.carousel-content {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease;
+  width: max-content;
+  margin: 4% 0;
+}
+
+.carousel-content img {
+  max-width: 150px; /* Tamaño máximo de las imágenes */
+  height: auto; /* Mantén la proporción */
+  margin: 0 20px; /* Espacio horizontal entre los logos */
+  border-radius: 5px; /* Bordes redondeados */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+  transition: transform 0.3s ease; /* Efecto suave */
+}
+
+.carousel-content img:hover {
+  transform: scale(1.1); /* Efecto de aumento al pasar el cursor */
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3); /* Incrementa la sombra al hover */
+}
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+  color: white;
+  font-size: 24px; /* Tamaño de la flecha */
+  border: none;
+  border-radius: 50%; /* Bordes redondeados */
+  cursor: pointer;
+  padding: 10px; /* Espaciado interno */
+  z-index: 10;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Sombra para destacar */
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.arrow:hover {
+  background-color: rgba(255, 255, 255, 0.9); /* Cambio de fondo al pasar el mouse */
+  color: black; /* Color de la flecha al hover */
+  transform: translateY(-50%) scale(1.1); /* Efecto de aumento al hover */
+}
+
+.prev {
+  left: 1%; /* Distancia del borde izquierdo */
+}
+
+.next {
+  right: 1%; /* Distancia del borde derecho */
+}
+
+
+
+
+.sidebar {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    background-color: #ffacbc;
+    color: #fff;
+}
+
+.sidebar a {
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+}
+.sidebar:active {
+    background-color: #ffffff; /* Color más oscuro cuando se presiona */
+    color: black;              /* Mantener color blanco en el texto */
+  }
+
+  /* Cambiar el color cuando el botón está enfocado (por ejemplo, con el teclado) */
+.sidebar:focus {
+    outline: none; /* Elimina el borde de enfoque predeterminado */
+    background-color: #ffffff; /* Color de fondo cuando está enfocado */
+    color: black;   /* Mantener color blanco en el texto */
+  }
+.sidebar a:hover {
+    background-color: #ffffff; /* Color al pasar el mouse */
+    color: black;
+  }
+  .my-button.selected {
+    background-color: #fafafa;
+    color: black; /* Color cuando el botón está seleccionado */
+  }
+
+#particles-js {
+	width:100%;
+	height: 100%;
+	position:fixed;
+	background:rgba(0, 0, 0, 0.541);
+  top: auto;
+  z-index: -1;
+}
