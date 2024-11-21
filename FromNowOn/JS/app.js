@@ -85,3 +85,53 @@ setInterval(() => {
     moveSlider('next');
 }, 4000);
 
+document.addEventListener("DOMContentLoaded", () => {
+    const audioSrc = sessionStorage.getItem("selectedAudio");
+    const isPlaying = sessionStorage.getItem("isPlaying") === "true"; 
+
+    let audio;
+
+    if (audioSrc) {
+        audio = new Audio(audioSrc);
+        audio.loop = true; 
+
+        if (isPlaying) {
+            document.body.addEventListener("click", () => {
+                audio.play().catch((error) => {
+                    console.warn("Error al reproducir el audio:", error);
+                });
+            }, { once: true });
+        }
+    }
+
+    // Crear botón para mute/desmute
+    const muteButton = document.createElement("button");
+    muteButton.textContent = "🔊";
+    muteButton.style.position = "fixed";
+    muteButton.style.top = "10px";
+    muteButton.style.right = "10px";
+    muteButton.style.padding = "10px";
+    muteButton.style.backgroundColor = "white";
+    muteButton.style.color = "black";
+    muteButton.style.border = "1px solid black";
+    muteButton.style.borderRadius = "5px";
+    muteButton.style.cursor = "pointer";
+    muteButton.style.zIndex = "9999";
+    document.body.appendChild(muteButton);
+
+    muteButton.addEventListener("click", () => {
+        if (audio) {
+            audio.muted = !audio.muted;
+            muteButton.textContent = audio.muted ? "🔇" : "🔊";
+        }
+    });
+
+    // Guarda el estado del audio antes de salir
+    window.addEventListener("beforeunload", () => {
+        if (audio && !audio.paused) {
+            sessionStorage.setItem("isPlaying", "true");
+        } else {
+            sessionStorage.setItem("isPlaying", "false");
+        }
+    });
+});

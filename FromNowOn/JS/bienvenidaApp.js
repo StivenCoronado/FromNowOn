@@ -66,12 +66,25 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    const records = document.querySelectorAll(".record"); // Selecciona todos los discos
+    const records = document.querySelectorAll(".record");
 
     records.forEach((record) => {
         record.addEventListener("click", () => {
-            const audioSrc = record.getAttribute("data-audio"); // Obtiene la ruta del audio
-            window.location.href = `index.html?audio=${encodeURIComponent(audioSrc)}`; // Redirige al index con el audio como parámetro
+            const audioSrc = record.getAttribute("data-audio");
+            window.location.href = `index.html?audio=${encodeURIComponent(audioSrc)}`;
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const records = document.querySelectorAll(".record");
+
+    records.forEach((record) => {
+        record.addEventListener("click", () => {
+            const audioSrc = record.getAttribute("data-audio");
+            sessionStorage.setItem("selectedAudio", audioSrc);
+            sessionStorage.setItem("isPlaying", "true");
+            window.location.href = "index.html";
         });
     });
 });
