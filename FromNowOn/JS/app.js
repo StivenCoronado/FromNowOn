@@ -11,6 +11,7 @@ let overlay = document.querySelector('.overlay');
 let fullscreenImage = document.getElementById('fullscreenImage');
 let overlayDescription = document.querySelector('.overlay-description');
 
+
 thumbnail.appendChild(thumbnailItems[0]);
 
 function moveSlider(direction) {
@@ -35,7 +36,6 @@ function moveSlider(direction) {
         }
     }, { once: true });
 }
-
 
 setInterval(() => {
     moveSlider('next');
@@ -80,3 +80,8 @@ overlay.addEventListener('click', () => {
 document.querySelector('.close-button').addEventListener('click', () => {
     overlay.style.display = 'none'; 
 });
+
+setInterval(() => {
+    moveSlider('next');
+}, 4000);
+

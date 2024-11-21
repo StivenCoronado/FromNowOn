@@ -3,31 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The user is welcomed and presented with a selection of 3 music tracks.">
+    <meta name="description" content="Responsive Welcome Page for From Now On.">
     <title>Welcome To FNO</title>
-
     <link rel="stylesheet" href="../CSS/stylesBienvenida.css">
-    
-    <link rel="icon" href="../IMG/logoFNO.png" type="image/x-icon">
 </head>
 
 <body>
-    <div class="container">
-        <div class"welcome-text">WELCOME TO</div>
-        <div class="animated-text">
-            <span></span>
-        </div>
 
-        <div class="record-selection">
-            <img src="../IMG/record.png" alt="Record 1">
-            <img src="../IMG/record.png" alt="Record 2">
-            <img src="../IMG/record.png" alt="Record 3">
-        </div>
-        <div class="logo">
-            <p><img src="../IMG/logoFNO.png" alt="Logo FromNowOn"></p>
-        </div>
+    <div id="audio-permission-toast" style="position: fixed; bottom: 20px; right: 20px; background-color: rgba(0, 0, 0, 0.8); color: white; padding: 15px; border-radius: 8px; display: flex; align-items: center; gap: 10px; z-index: 1000; box-shadow: 0px 4px 6px rgba(0,0,0,0.2);">
+        <span>¿Quieres activar el audio?</span>
+        <button id="accept-audio" style="padding: 5px 10px; background-color: #ff6f91; color: white; border: none; border-radius: 5px; cursor: pointer;">Activar</button>
     </div>
-</body>
 
+    <h1 class="welcome-text">WELCOME TO</h1>
+ 
+    <h1 class="main-title">
+        <span id="animated-text"></span><span class="cursor">|</span>
+    </h1>
+
+   <div class="record-selection">
+        <img src="../IMG/record.png" alt="Record 1" class="record" data-audio="../AUDIO/Late_Night_Thoughts_By_Daniel_Pupp.mp3">
+        <img src="../IMG/record.png" alt="Record 2" class="record" data-audio="../AUDIO/Up_And_Down_By_Emi_Massmer.mp3">
+        <img src="../IMG/record.png" alt="Record 3" class="record" data-audio="../AUDIO/In_My_Arms_By_Kid_Jones.mp3">
+    </div>
+
+    <div class="logo">
+        <img src="../IMG/logoFNO.png" alt="Logo From Now On">
+    </div>
+
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+    <div class="circle circle-3"></div>
+
+    <script src="../JS/bienvenidaApp.js"></script>
+</body>
 </html>
 

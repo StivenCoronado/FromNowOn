@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700&display=swap');
 
-
+/* General Styles */
 body {
     margin: 0;
     background-color: #000;
@@ -13,7 +13,7 @@ a {
     text-decoration: none;
 }
 
-
+/* Header Styles */
 header {
     width: 1140px;
     max-width: 80%;
@@ -43,7 +43,6 @@ header a:hover {
 }
 
 
-/* Slider Section */
 .slider {
     height: 100vh;
     margin-top: -50px;
@@ -117,7 +116,7 @@ header a:hover {
     color: #eee;
 }
 
-
+/* Thumbnail Section */
 .thumbnail {
     position: absolute;
     bottom: 50px;
@@ -143,7 +142,7 @@ header a:hover {
     box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
 }
 
-
+/* Navigation Arrows Section */
 .nextPrevArrows {
     position: absolute;
     top: 80%;
@@ -174,12 +173,12 @@ header a:hover {
     color: #000;
 }
 
-
+/* Animation Part */
 .slider .list .item:nth-child(1) {
     z-index: 1;
 }
 
-
+/* Animation for first item text */
 .slider .list .item:nth-child(1) .content .title,
 .slider .list .item:nth-child(1) .content .type,
 .slider .list .item:nth-child(1) .content .description,
@@ -213,7 +212,6 @@ header a:hover {
 .slider .list .item:nth-child(1) .content .buttons {
     animation-delay: 1s !important;
 }
-
 
 .slider.next .list .item:nth-child(1) img {
     width: 150px;
@@ -260,7 +258,6 @@ header a:hover {
         transform: translateX(150px);
     }
 }
-
 
 .slider.prev .list .item:nth-child(2) {
     z-index: 2;

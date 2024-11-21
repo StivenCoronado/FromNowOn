@@ -9,97 +9,144 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffacbc;
     font-family: Arial, sans-serif;
+    background-color: #ffacbc;
+    padding: calc(0.5rem + 1vh);
+    overflow: hidden;
 }
 
-.container {
-    width: 1830px;
-    padding: 300px;
+body {
     background-color: #fff;
-    border-radius: 20px;
-    text-align: center;
+    width: calc(98%); 
+    height: calc(97% );
+    border-radius: calc(30px); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.container h2 {
-    font-size: 1.2rem;
+.welcome-text {
+    font-size: clamp(1rem, 1.5vw, 2rem);
     color: #333;
     font-weight: normal;
+    margin-bottom: calc(1vh + 0.5rem); 
+    text-align: center;
+    z-index: 1;
 }
 
-.container h1 {
-    font-size: 3rem;
-    color: #ffacbc;
+.main-title {
+    font-size: clamp(2rem, 4vw, 5rem); 
+    color: #ff6f91;
     font-weight: bold;
-    margin: 10px 0;
-}
-.animated-text{
-    font-size: 34px;
-    font-weight: 600;
-    min-width: 280px;
+    margin: calc(1vh + 1rem) 0;
+    text-align: center;
+    z-index: 1;
 }
 
-.animated-text span{
-    position: relative;
+.cursor {
+    font-weight: bold;
+    color: transparent;
+    font-size: inherit;
+    margin-left: 0.5vw;
+    animation: blink 0.5s steps(1) infinite;
+    display: inline-block;
+    width: 0.05em;
+    background-color: #ff6f91;
+    z-index: 1;
 }
 
-.animated-text span::before{
-    content: 'From Now ON.';
-    color: #ffacbc ;
-    animation: words 20s infinite;
-}
-
-.animated-text span::after{
-    content: '';
-    background-color: #ffffff;
-    position: absolute;
-    width: calc(100% + 8px);
-    height: 100%;
-    border-left: 2px solid rgb(0, 0, 0);
-    right: -5px;
-    animation: cursor .6s infinite, typing 15s steps(14) ;
-}
-
-@keyframes cursor {
-    to {
-        border-left: 2px solid #fff;
-    }
-    
-}
-@keyframes words {
-    0%, 100% {
-        content:'From Now ON.'
+@keyframes blink {
+    50% {
+        opacity: 0;
     }
 }
 
-@keyframes typing {
-    10% , 15%, 20%, 25%, 30%, 35%, 40%, 45%, 50%, 55%, 60%, 65%, 70%, 75%, 80%, 85%, 90%, 95% {
-        width: 0;
-    }
-    5% , 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% {
-        width: calc(100%+8px);
-    }
+.record-selection img {
+    width: clamp(50px, 5vw, 120px);
+    height: clamp(50px, 5vw, 120px);
+    border-radius: 50%;
+    transition: transform 0.2s ease-in-out;
 }
 
 .record-selection {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin: 20px 0;
+    gap: clamp(1rem, 3vw, 2rem);
+    margin: clamp(1rem, 3vh, 3rem) 0; 
+    z-index: 1;
 }
 
 .record-selection img {
-    width: 60px;
-    height: 60px;
+    width: clamp(50px, 5vw, 120px); 
+    height: clamp(50px, 5vw, 120px);
     border-radius: 50%;
 }
 
+/* Logo */
 .logo {
-    margin-top: 20px;
+    margin-top: clamp(1rem, 2vh, 3rem); 
 }
 
 .logo img {
-    width: 60px;
+    width: clamp(40px, 6vw, 100px); 
 }
 
+.circle {
+    position: absolute;
+    background-color: #ffacbc;
+    border-radius: 50%;
+    z-index: 0;
+    opacity: 1;
+    width: clamp(200px, 30vw, 400px);
+    height: clamp(200px, 30vw, 400px);
+}
 
+.circle-1 {
+    top: calc(-23vh); 
+    left: calc(25vw); 
+}
+
+.circle-2 {
+    bottom: calc(30vh); 
+    right: calc(-10vw); 
+}
+
+.circle-3 {
+    top: calc(72vh); 
+    left: calc(-5vw); 
+}
+
+@media (max-width: 768px) {
+    body {
+        width: calc(100% - 2vw);
+        height: calc(100% - 2vh);
+        border-radius: 1rem;
+    }
+
+    .welcome-text {
+        font-size: clamp(0.8rem, 2vw, 1.2rem);
+    }
+
+    .main-title {
+        font-size: clamp(1.8rem, 4vw, 3rem);
+    }
+
+    .record-selection {
+        gap: 1rem;
+    }
+
+    .record-selection img {
+        width: clamp(40px, 8vw, 80px);
+        height: clamp(40px, 8vw, 80px);
+    }
+
+    .logo img {
+        width: clamp(30px, 5vw, 60px);
+    }
+
+    .circle {
+        width: clamp(100px, 20vw, 200px);
+        height: clamp(100px, 20vw, 200px);
+    }
+}
