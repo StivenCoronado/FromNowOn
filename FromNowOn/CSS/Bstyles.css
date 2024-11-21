@@ -1,105 +1,128 @@
-       body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff00;
-        }
+body {
+    font-family: Arial, sans-serif;
+    margin: 5rem 5vw 1rem 5vw; /* Cambiado el margen inferior a 1rem y usado vw para el margen lateral */
+    padding: 0;
+    background-color: #ffffff00;
+    overflow: hidden;
+}
 
-        .contact {
-            background: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255)), url(../../assets/svg/common-bg.svg);
-            background-size: cover;
-            background-position: center;
-            
-            text-align: center;
-        }
+.contact {
+    background: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255)), url(../../assets/svg/common-bg.svg);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
 
-      
+.contact h2 {
+    margin-top: 0; /* Elimina el margen superior */
+    margin-bottom: 3rem; /* Reduce el margen inferior */
+    color: #333;
+    width: 98%;
+}   
 
-        .contact h2 {
-            margin-top: rem; 
-            margin-bottom: 3rem;
-            color: #333;
-            width: 98%;
-        }   
+.texto {
+    position: relative;
+    top: 25vh; /* Cambiado a vh para que sea responsive */
+    font-size: 0.8rem;
+}
 
-        .texto {
-            position: relative;
-            top: 150px;
-            font-size: 0.8rem; 
-        }
-        .contact-info {
-            display: flex;
-            justify-content: center; 
-            align-items: center; 
-            height: 10cm; 
-            width: 100%; 
-        }
-        
-        .contact-info img {
-            opacity: 0.4; 
-            width: 600px; 
-            height: 500px; 
-            
-        }
-        .contact-count {
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-        }
-        
-        .contact-1,
-        .contact-2,
-        .contact-3,
-        .contact-4 {
-            display: flex;
-            justify-content: center; 
-            align-items: center;
-            height: 3.1cm; 
-            margin: 0.9cm;
-        }
-        
-        .contact-1 a img,
-        .contact-2 a img,
-        .contact-3 a img,
-        .contact-4 a img {
-            width: 1cm;
-            height: auto; 
-        }
-        .contact-line{
-            width: 100%;
-            height: 10cm;
-            margin-top: -2cm;
-            margin-bottom: cm;
-        }
-        .texto2 {
-            margin-top: -22rem; 
-            color: #333;
-            margin-bottom: -30%;
-    
-        }
-        .sidebar {
-            position: fixed;
-            top: 50%;
-            right: 0;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            background-color: #000000;
-            color: #ffacbc;
-        }
-         
-        .sidebar a {
-            padding: 10px;
-            text-decoration: none;
-            color: #ffacbc;
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-            font-weight: bold;
-            text-align: center;
-            border-bottom: 1px solid #fff;
-        }
-        .sidebar a:hover {
-            background-color: #ffffff; 
-        }    
+.contact-info {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 15cm; /* Ajusta la altura según necesites */
+    width: 100%; /* O el tamaño que desees */
+}
 
-      
+.contact-info img {
+    opacity: 0.4; /* Cambia este valor al tamaño deseado */
+    max-width: 100vh;
+    min-width: 20vh ;
+    width: 600px; /* Cambia este valor al tamaño deseado */
+    height: 500px; /* Mantiene la proporción de la imagen */
+}
+
+.contact-count {
+    display: flex; /* Alinea los elementos hijos en una fila */
+    justify-content: center; /* Centra horizontalmente el contenedor */
+    align-items: center; /* Centra verticalmente el contenedor */
+}
+
+.contact-1,
+.contact-2,
+.contact-3,
+.contact-4 {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 3.2cm; /* Altura del contenedor */
+    margin: 0.9cm;
+}
+
+.contact-1 a img,
+.contact-2 a img,
+.contact-3 a img,
+.contact-4 a img {
+    width: 1.0cm; /* Cambia esto al tamaño que desees */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.contact-line {
+    width: 100%;
+    height: 10cm;
+    margin-top: -2cm;
+}
+
+.texto2 {
+    position: relative;
+    top: -35vh; /* Cambiado a vh para que sea responsive */
+    font-size: 2rem; /* Cambia el tamaño del texto aquí */
+}
+
+.sidebar {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    background-color: #000000;
+    color: #ffacbc;
+}
+
+.sidebar a {
+    padding: 10px;
+    text-decoration: none;
+    color: #ffacbc;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+}
+
+.sidebar a:hover {
+    background-color: #ffffff; 
+}
+
+/* Media Queries para hacer el diseño responsive */
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        height: auto; /* Permite que la altura se ajuste automáticamente */
+    }
+    .contact-info img {
+        width: 90%; /* Cambia el tamaño de la imagen a un porcentaje */
+    }
+    .contact-1, .contact-2, .contact-3, .contact-4 {
+        height: auto; /* Permite que la altura se ajuste automáticamente */
+        margin: 0.5cm; /* Reduce el margen */
+    }
+    .sidebar {
+        width: 100%; /* Ajusta el ancho de la barra lateral */
+        position: relative; /* Cambia la posición a relativa en pantallas pequeñas */
+        top: auto; /* Elimina la posición fija */
+        right: auto; /* Elimina la posición fija */
+        transform: none; /* Elimina la transformación */
+    }
+}
