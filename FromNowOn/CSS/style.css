@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700&display=swap');
 
-/* General Styles */
+
 body {
     margin: 0;
     background-color: #000;
@@ -13,7 +13,7 @@ a {
     text-decoration: none;
 }
 
-/* Header Styles */
+
 header {
     width: 1140px;
     max-width: 80%;
@@ -41,6 +41,7 @@ header a:hover {
     background: #14ff72cb;
     border-radius: 2px;
 }
+
 
 /* Slider Section */
 .slider {
@@ -116,7 +117,7 @@ header a:hover {
     color: #eee;
 }
 
-/* Thumbnail Section */
+
 .thumbnail {
     position: absolute;
     bottom: 50px;
@@ -142,7 +143,7 @@ header a:hover {
     box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Navigation Arrows Section */
+
 .nextPrevArrows {
     position: absolute;
     top: 80%;
@@ -173,12 +174,12 @@ header a:hover {
     color: #000;
 }
 
-/* Animation Part */
+
 .slider .list .item:nth-child(1) {
     z-index: 1;
 }
 
-/* Animation for first item text */
+
 .slider .list .item:nth-child(1) .content .title,
 .slider .list .item:nth-child(1) .content .type,
 .slider .list .item:nth-child(1) .content .description,
@@ -213,7 +214,7 @@ header a:hover {
     animation-delay: 1s !important;
 }
 
-/* Animation for next button click */
+
 .slider.next .list .item:nth-child(1) img {
     width: 150px;
     height: 220px;
@@ -260,7 +261,7 @@ header a:hover {
     }
 }
 
-/* Animation for prev button click */
+
 .slider.prev .list .item:nth-child(2) {
     z-index: 2;
 }
@@ -300,6 +301,103 @@ header a:hover {
     animation: contentOut 1.5s linear 1 forwards !important;
 }
 
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    z-index: 1000; 
+}
+
+.overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+
+.overlay {
+    position: fixed;
+    top: 10;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    z-index: 1000; 
+}
+
+
+.EimagenProyectos1{
+    width: 60% !important;
+    height: auto;
+
+}
+
+.overlay-description-container {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-top: 15px; 
+    align-items: flex-start;
+}
+
+.overlay-description {
+    color: #fff;
+    text-align: left; 
+    margin: 0; 
+    max-width: 45%; 
+    
+
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    color: #000;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+.close-button:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+
+
+.behind-the-scenes-button {
+    margin-left: 15px; /* Espaciado a la izquierda del botón */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    background-color: pink; /* Color de fondo rosado */
+    color: black; /* Color de texto negro */
+    border-radius: 25px; /* Bordes redondeados */
+    text-align: center; /* Centrar texto */
+    text-decoration: none; /* Quitar subrayado */
+    font-weight: bold; /* Negrita */
+    transition: background-color 0.3s; /* Transición suave para hover */
+}
+
+.behind-the-scenes-button:hover {
+    background-color: #ff66b2; /* Color de fondo al pasar el ratón (opcional) */
+}
+
+
 @keyframes contentOut {
     to {
         transform: translateY(-150px);
@@ -316,3 +414,4 @@ header a:hover {
         font-size: 50px;
     }
 }
+
