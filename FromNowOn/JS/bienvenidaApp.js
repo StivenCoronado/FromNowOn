@@ -1,18 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const text = "FROM NOW ON";
+    // Animación de texto con las "O" sólidas centradas
+    const text = [
+        "F", "R", 
+        "<span class='solid-o o1'>O</span>", 
+        "M", " ", 
+        "N", 
+        "<span class='solid-o o2'>O</span>", 
+        "W", " ", 
+        "<span class='solid-o o3'>O</span>", 
+        "N"
+    ];
     const animatedText = document.getElementById("animated-text");
     let index = 0;
 
     function typeText() {
         if (index < text.length) {
-            animatedText.textContent += text.charAt(index);
+            animatedText.innerHTML += text[index];
             index++;
-            setTimeout(typeText, 100);
+            setTimeout(typeText, 100); // Velocidad de escritura
         }
     }
 
     typeText();
 });
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const records = document.querySelectorAll(".record");

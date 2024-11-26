@@ -37,12 +37,48 @@ body {
 
 .main-title {
     font-size: clamp(2rem, 4vw, 5rem); 
-    color: #ff6f91;
+    color: #ffacbc;
     font-weight: bold;
     margin: calc(1vh + 1rem) 0;
     text-align: center;
     z-index: 1;
 }
+
+.solid-o {
+    background-color: #ffacbc; /* Color sólido del círculo */
+    color: transparent; /* Hace que el texto de la O no sea visible */
+    width: 1.1em; /* Ajusta al tamaño exacto del texto */
+    height: 1.1em; /* Mantiene el círculo perfecto */
+    line-height: 1em; /* Centra el texto verticalmente */
+    border-radius: 50%; /* Forma de círculo */
+    display: inline-block; /* Alineación con las demás letras */
+    position: relative; /* Permite mover ajustes finos */
+    vertical-align: middle; /* Alineación vertical perfecta */
+    font-size: inherit; /* Mantiene el tamaño del resto del texto */
+}
+
+/* Ajustes individuales para las posiciones */
+.solid-o.o1 {
+    width: 0.75em;
+    height: 0.80em;
+    top: -0.1em; /* Centrada */
+    left: 0; /* Centrada */
+}
+
+.solid-o.o2 {
+    width: 0.75em;
+    height: 0.80em;
+    top: -0.1em; /* Centrada */
+    left: 0; /* Centrada */
+}
+
+.solid-o.o3 {
+    width: 0.75em;
+    height: 0.80em;
+    top: -0.1em; /* Centrada */
+    left: 0; /* Centrada */
+}
+
 
 .cursor {
     font-weight: bold;
@@ -52,7 +88,7 @@ body {
     animation: blink 0.5s steps(1) infinite;
     display: inline-block;
     width: 0.05em;
-    background-color: #ff6f91;
+    background-color: #ffacbc;
     z-index: 1;
 }
 
