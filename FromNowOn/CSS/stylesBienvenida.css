@@ -112,12 +112,6 @@ body {
     z-index: 1;
 }
 
-.record-selection img {
-    width: clamp(50px, 5vw, 120px); 
-    height: clamp(50px, 5vw, 120px);
-    border-radius: 50%;
-}
-
 .logo {
     margin-top: clamp(1rem, 2vh, 3rem); 
 }
