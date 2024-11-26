@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Animación de texto con las "O" sólidas centradas
     const text = [
         "F", "R", 
         "<span class='solid-o o1'>O</span>", 
@@ -17,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (index < text.length) {
             animatedText.innerHTML += text[index];
             index++;
-            setTimeout(typeText, 100); // Velocidad de escritura
+            setTimeout(typeText, 100);
         }
     }
 
