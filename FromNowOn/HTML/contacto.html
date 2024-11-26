@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="../CSS/Bstyles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Contacto</title>
+    <style>
+        /* Estilos responsivos */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .contact-container {
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .contact-info img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .contact-count {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .contact-count div {
+            margin: 10px;
+        }
+
+        .contact-count img {
+            width: 50px; /* Ajusta el tamaño de los iconos */
+            height: auto;
+        }
+
+        .contact-line img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .sidebar a {
+            margin: 5px 0;
+            text-decoration: none;
+            color: #000;
+        }
+
+        @media (max-width: 600px) {
+            .contact-count {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-count div {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<section class="contact">
+    <div class="contact-container">
+        <h2>CONTACTO</h2>
+        
+        <div class="contact-info">
+            <a>
+                <img src="../IMG/Logo_Transparent_FROMNOWON.png"/>
+            </a>
+        </div>
+        
+        <div class="contact-count">
+            <div class="contact-1">
+                <a href="https://vimeo.com/fromnowonit">
+                    <img src="../IMG/vimeo.png" alt="Logo 1" />
+                </a>
+            </div>
+            <div class="contact-2">
+                <a href="https://www.linkedin.com/company/from-now-on-filmproduction/">
+                    <img src="../IMG/negro.png" alt="Logo 2" />
+                </a>
+            </div>
+            <div class="contact-3">
+                <a href="mailto:info@fromnowon.it">
+                    <img src="../IMG/correo.png" alt="Logo 3" />
+                </a>
+            </div>
+            <div class="contact-4">
+                <a href="https://www.instagram.com/fromnowon.official/">
+                    <img src="../IMG/instagram.png" alt="Logo 4" />
+                </a>
+            </div>
+        </div>
+        
+        <div class="contact-line">
+            <a href="">
+                <img src="../IMG/line.png" alt="Logo 4" />
+            </a>
+        </div>
+        <div>
+            <h2 class="texto2">info@fromnowon.it</h2>
+        </div>
+    </div>
+    <aside class="sidebar">
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+    </aside>
+    <div id="particles-js"></div>
+<script src="../sparticles.js-master/sparticles.min.js"></script>
+<script src="../sparticles.js-master/sparticlesjs-config.json"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        particlesJS.load('particles-js', '../sparticles.js-master/sparticlesjs-config.json', function() {
+            console.log('callback - particles.js config loaded');
+        });
+    });
+</script>
+<div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+
+</section>
+
+</body>
+</html>
