@@ -9,7 +9,7 @@ body{
     width: 90%;
     float: right;
     padding-top: 0%;
-    padding-right: 15%;  
+    padding-left: 10%;  
 
 }
 .mision{
@@ -20,7 +20,7 @@ body{
 .vision{
     float:left;
     position: unset;
-    padding-left: 5%;
+    padding-left: 25%;
 }
 b{
     color: white;
