@@ -1,6 +1,5 @@
 let nextBtn = document.querySelector('.next');
 let prevBtn = document.querySelector('.prev');
-
 let slider = document.querySelector('.slider');
 let sliderList = slider.querySelector('.slider .list');
 let thumbnail = document.querySelector('.slider .thumbnail');
@@ -10,7 +9,6 @@ let newImageSection = document.querySelector('.new-image');
 let overlay = document.querySelector('.overlay');
 let fullscreenImage = document.getElementById('fullscreenImage');
 let overlayDescription = document.querySelector('.overlay-description');
-
 
 thumbnail.appendChild(thumbnailItems[0]);
 
@@ -41,7 +39,6 @@ setInterval(() => {
     moveSlider('next');
 }, 4000);
 
-
 let isScrolling = false;
 
 window.addEventListener('wheel', (event) => {
@@ -57,7 +54,6 @@ window.addEventListener('wheel', (event) => {
         }, 600); 
     }
 });
-
 
 thumbnailItems.forEach(item => {
     item.addEventListener('click', () => {
