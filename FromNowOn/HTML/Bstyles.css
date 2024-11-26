@@ -1,0 +1,212 @@
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Asegura que las partículas estén detrás del contenido */
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 5rem 5vw 1rem 5vw; /* Cambiado el margen inferior a 1rem y usado vw para el margen lateral */
+    padding: 0;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.contact {
+    background: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255)), url(../../assets/svg/common-bg.svg);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    z-index: 3;
+}
+
+.contact h2 {
+    margin-top: 0; /* Elimina el margen superior */
+    margin-bottom: 3rem; /* Reduce el margen inferior */
+    color: #000000;
+    width: 98%;
+}   
+
+.texto {
+    position: relative;
+    top: 21.2vh; /* Ajusta este valor según sea necesario */
+    font-size: clamp(0.8rem,0.6vw,0.4rem); /* Usa vw para que el tamaño de fuente sea responsivo */
+    line-height: 1.5; /* Mejora la legibilidad */
+    text-align: center; /* Centra el texto horizontalmente */
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: auto; /* Permite que la altura se ajuste automáticamente según el contenido */
+    width: 100%; /* Se mantiene al 100% del contenedor padre */
+    padding: 1%; /* Agrega un padding opcional */
+}
+
+.contact-info img {
+    opacity: 1; /* Cambia este valor al tamaño deseado */
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    min-width: 20%; /* Establece un ancho mínimo en porcentaje */
+}
+
+
+.contact-count {
+    display: flex; /* Alinea los elementos hijos en una fila */
+    justify-content: center; /* Centra horizontalmente el contenedor */
+    align-items: center; /* Centra verticalmente el contenedor */
+}
+
+.contact-1,
+.contact-2,
+.contact-3,
+.contact-4 {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 10vh; /* Altura del contenedor relativa al viewport */
+    margin: 2%; /* Margen relativo al ancho de la pantalla */
+    z-index: 2;
+}
+
+.contact-1 a img,
+.contact-2 a img,
+.contact-3 a img,
+.contact-4 a img {
+    width: 2.5vw; /* Hacemos las imágenes más pequeñas con 2.5% del ancho del viewport */
+    height: auto; /* Mantiene la proporción de la imagen */
+    z-index: 2;
+    margin-top: 2cm; /* Ajustamos el margen superior para elevar la imagen dentro de su contenedor */
+}
+
+/* Media queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .contact-1,
+    .contact-2,
+    .contact-3,
+    .contact-4 {
+        height: 15vh; /* Aumentamos la altura en pantallas pequeñas */
+    }
+
+    .contact-1 a img,
+    .contact-2 a img,
+    .contact-3 a img,
+    .contact-4 a img {
+        width: 5vw; /* Aumentamos un poco el tamaño de las imágenes en pantallas medianas */
+        margin-top: -2vh; /* Elevamos más las imágenes en pantallas medianas */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-1,
+    .contact-2,
+    .contact-3,
+    .contact-4 {
+        height: 20vh; /* Aumentamos la altura en pantallas extra pequeñas */
+    }
+
+    .contact-1 a img,
+    .contact-2 a img,
+    .contact-3 a img,
+    .contact-4 a img {
+        width: 1200vw; /* Ajustamos el tamaño de las imágenes aún más en pantallas muy pequeñas */
+        margin-top: -3vh; /* Elevamos más las imágenes en pantallas muy pequeñas */
+    }
+}
+
+
+.contact-line {
+    width: 100%; /* Mantiene el ancho al 100% del contenedor */
+    height: 15vh; /* Altura relativa al 15% del alto del viewport */
+    margin-top: -10vh; /* Desplazamos hacia arriba con un margen relativo al alto del viewport */
+}
+
+/* Media query para pantallas medianas */
+@media (max-width: 768px) {
+    .contact-line {
+        height: 20vh; /* Aumentamos la altura para pantallas medianas */
+        margin-top: -6vh; /* Ajustamos el margen superior para pantallas medianas */
+    }
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 480px) {
+    .contact-line {
+        height: 25vh; /* Aumentamos aún más la altura en pantallas pequeñas */
+        margin-top: -7vh; /* Ajustamos el margen superior para pantallas muy pequeñas */
+    }
+}
+
+
+.texto2 {
+    position: relative;
+    top: -19vh; /* Cambiado a vh para que sea responsive */
+    color: #000000;
+    font-size: 2rem; /* Cambia el tamaño del texto aquí */
+}
+
+.sidebar {
+    position: fixed;
+    z-index: 2;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    background-color: #000000;
+    color: #ffacbc;
+    
+}
+
+.sidebar a {
+    padding: 10px;
+    text-decoration: none;
+    color: #ffacbc;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+}
+
+.sidebar a:hover {
+    background-color: #ffffff; 
+}
+.bg {
+    animation:slide 5s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #ffffff41 50%, #ffacbd6c 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:1;
+  }
+  
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:5s;
+    z-index: 1;
+  }
+  
+  .bg3 {
+    animation-duration:5s;
+  }
+  
+
+  h1 {
+    font-family:monospace;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }
