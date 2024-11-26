@@ -26,7 +26,7 @@ b{
     color: white;
 }
 .dir-rtl {
-    direction: rtl;       /* Cambia la dirección del texto de derecha a izquierda */
+    direction: rtl; 
     text-align: right;  
     color: white ;  
   }
@@ -50,7 +50,6 @@ b{
     font-weight: bold;
 }
 
-  /* Carousel */
 .carousel {
   position: relative;
   overflow: hidden;
@@ -104,15 +103,12 @@ b{
 }
 
 .prev {
-  left: 1%; /* Distancia del borde izquierdo */
+  left: 1%;
 }
 
 .next {
-  right: 1%; /* Distancia del borde derecho */
+  right: 1%;
 }
-
-
-
 
 .sidebar {
     position: fixed;
@@ -139,11 +135,10 @@ b{
     color: black;              
   }
 
-  
 .sidebar:focus {
-    outline: none; /* Elimina el borde de enfoque predeterminado */
+    outline: none; 
     background-color: #ffffff; 
-    color: black;   /* Mantener color blanco en el texto */
+    color: black; 
   }
 .sidebar a:hover {
     background-color: #ffffff; 

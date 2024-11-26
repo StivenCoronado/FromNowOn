@@ -13,7 +13,6 @@ a {
     text-decoration: none;
 }
 
-/* Header Styles */
 header {
     width: 1140px;
     max-width: 80%;
@@ -41,7 +40,6 @@ header a:hover {
     background: #14ff72cb;
     border-radius: 2px;
 }
-
 
 .slider {
     height: 100vh;
@@ -116,7 +114,6 @@ header a:hover {
     color: #eee;
 }
 
-/* Thumbnail Section */
 .thumbnail {
     position: absolute;
     bottom: 50px;
@@ -142,7 +139,6 @@ header a:hover {
     box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Navigation Arrows Section */
 .nextPrevArrows {
     position: absolute;
     top: 80%;
@@ -173,12 +169,10 @@ header a:hover {
     color: #000;
 }
 
-/* Animation Part */
 .slider .list .item:nth-child(1) {
     z-index: 1;
 }
 
-/* Animation for first item text */
 .slider .list .item:nth-child(1) .content .title,
 .slider .list .item:nth-child(1) .content .type,
 .slider .list .item:nth-child(1) .content .description,
@@ -298,7 +292,6 @@ header a:hover {
     animation: contentOut 1.5s linear 1 forwards !important;
 }
 
-
 .overlay {
     position: fixed;
     top: 0;
@@ -319,7 +312,6 @@ header a:hover {
     border-radius: 10px;
 }
 
-
 .overlay {
     position: fixed;
     top: 10;
@@ -334,11 +326,9 @@ header a:hover {
     z-index: 1000; 
 }
 
-
 .EimagenProyectos1{
     width: 60% !important;
     height: auto;
-
 }
 
 .overlay-description-container {
@@ -354,8 +344,6 @@ header a:hover {
     text-align: left; 
     margin: 0; 
     max-width: 45%; 
-    
-
 }
 
 .close-button {
@@ -376,24 +364,21 @@ header a:hover {
     background-color: rgba(255, 255, 255, 1);
 }
 
-
-
 .behind-the-scenes-button {
-    margin-left: 15px; /* Espaciado a la izquierda del botón */
-    padding: 10px 20px; /* Espaciado interno del botón */
-    background-color: pink; /* Color de fondo rosado */
-    color: black; /* Color de texto negro */
-    border-radius: 25px; /* Bordes redondeados */
-    text-align: center; /* Centrar texto */
-    text-decoration: none; /* Quitar subrayado */
-    font-weight: bold; /* Negrita */
-    transition: background-color 0.3s; /* Transición suave para hover */
+    margin-left: 15px; 
+    padding: 10px 20px; 
+    background-color: pink; 
+    color: black;
+    border-radius: 25px; 
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold; 
+    transition: background-color 0.3s; 
 }
 
 .behind-the-scenes-button:hover {
-    background-color: #ff66b2; /* Color de fondo al pasar el ratón (opcional) */
+    background-color: #ff66b2;
 }
-
 
 @keyframes contentOut {
     to {
@@ -411,4 +396,3 @@ header a:hover {
         font-size: 50px;
     }
 }
-

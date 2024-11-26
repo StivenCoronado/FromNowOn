@@ -132,55 +132,26 @@ body {
     border-radius: 50%;
     z-index: 0;
     opacity: 1;
-    width: clamp(200px, 30vw, 400px);
-    height: clamp(200px, 30vw, 400px);
+    width: clamp(100px, 10vw, 300px);
+    height: clamp(100px, 10vw, 300px); 
 }
 
 .circle-1 {
-    top: calc(-23vh); 
-    left: calc(25vw); 
+    top: -24%;
+    left: 17%;
 }
 
 .circle-2 {
-    bottom: calc(30vh); 
-    right: calc(-10vw); 
+    right: -12%;
 }
 
 .circle-3 {
-    top: calc(72vh); 
-    left: calc(-5vw); 
+    bottom: -12%;
+    left: -6%;
 }
 
 @media (max-width: 768px) {
-    body {
-        width: calc(100% - 2vw);
-        height: calc(100% - 2vh);
-        border-radius: 1rem;
-    }
-
-    .welcome-text {
-        font-size: clamp(0.8rem, 2vw, 1.2rem);
-    }
-
-    .main-title {
-        font-size: clamp(1.8rem, 4vw, 3rem);
-    }
-
-    .record-selection {
-        gap: 1rem;
-    }
-
-    .record-selection img {
-        width: clamp(40px, 8vw, 80px);
-        height: clamp(40px, 8vw, 80px);
-    }
-
-    .logo img {
-        width: clamp(30px, 5vw, 60px);
-    }
-
     .circle {
-        width: clamp(100px, 20vw, 200px);
-        height: clamp(100px, 20vw, 200px);
+        display: none; 
     }
 }

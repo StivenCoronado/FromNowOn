@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 5rem 5vw 1rem 5vw; /* Cambiado el margen inferior a 1rem y usado vw para el margen lateral */
+    margin: 5rem 5vw 1rem 5vw;
     padding: 0;
     background-color: #ffffff00;
     overflow: hidden;
@@ -14,38 +14,38 @@ body {
 }
 
 .contact h2 {
-    margin-top: 0; /* Elimina el margen superior */
-    margin-bottom: 3rem; /* Reduce el margen inferior */
+    margin-top: 0; 
+    margin-bottom: 3rem; 
     color: #333;
     width: 98%;
 }   
 
 .texto {
     position: relative;
-    top: 25vh; /* Cambiado a vh para que sea responsive */
+    top: 25vh; 
     font-size: 0.8rem;
 }
 
 .contact-info {
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    height: 15cm; /* Ajusta la altura según necesites */
-    width: 100%; /* O el tamaño que desees */
+    justify-content: center; 
+    align-items: center; 
+    height: 15cm; 
+    width: 100%; 
 }
 
 .contact-info img {
-    opacity: 0.4; /* Cambia este valor al tamaño deseado */
+    opacity: 0.4; 
     max-width: 100vh;
     min-width: 20vh ;
-    width: 600px; /* Cambia este valor al tamaño deseado */
-    height: 500px; /* Mantiene la proporción de la imagen */
+    width: 600px; 
+    height: 500px; 
 }
 
 .contact-count {
-    display: flex; /* Alinea los elementos hijos en una fila */
-    justify-content: center; /* Centra horizontalmente el contenedor */
-    align-items: center; /* Centra verticalmente el contenedor */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
 }
 
 .contact-1,
@@ -53,9 +53,9 @@ body {
 .contact-3,
 .contact-4 {
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    height: 3.2cm; /* Altura del contenedor */
+    justify-content: center; 
+    align-items: center; 
+    height: 3.2cm; 
     margin: 0.9cm;
 }
 
@@ -63,8 +63,8 @@ body {
 .contact-2 a img,
 .contact-3 a img,
 .contact-4 a img {
-    width: 1.0cm; /* Cambia esto al tamaño que desees */
-    height: auto; /* Mantiene la proporción de la imagen */
+    width: 1.0cm; 
+    height: auto; 
 }
 
 .contact-line {
@@ -75,8 +75,8 @@ body {
 
 .texto2 {
     position: relative;
-    top: -35vh; /* Cambiado a vh para que sea responsive */
-    font-size: 2rem; /* Cambia el tamaño del texto aquí */
+    top: -35vh;
+    font-size: 2rem;
 }
 
 .sidebar {
@@ -105,24 +105,23 @@ body {
     background-color: #ffffff; 
 }
 
-/* Media Queries para hacer el diseño responsive */
 @media (max-width: 768px) {
     .contact-info {
-        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
-        height: auto; /* Permite que la altura se ajuste automáticamente */
+        flex-direction: column; 
+        height: auto; 
     }
     .contact-info img {
-        width: 90%; /* Cambia el tamaño de la imagen a un porcentaje */
+        width: 90%; 
     }
     .contact-1, .contact-2, .contact-3, .contact-4 {
-        height: auto; /* Permite que la altura se ajuste automáticamente */
-        margin: 0.5cm; /* Reduce el margen */
+        height: auto;
+        margin: 0.5cm;
     }
     .sidebar {
-        width: 100%; /* Ajusta el ancho de la barra lateral */
-        position: relative; /* Cambia la posición a relativa en pantallas pequeñas */
-        top: auto; /* Elimina la posición fija */
-        right: auto; /* Elimina la posición fija */
-        transform: none; /* Elimina la transformación */
+        width: 100%;
+        position: relative;
+        top: auto; 
+        right: auto;
+        transform: none; 
     }
 }

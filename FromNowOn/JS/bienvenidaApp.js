@@ -1,4 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const circles = [
+        { class: "circle-1", style: { top: "10%", left: "20%" } },
+        { class: "circle-2", style: { top: "50%", right: "10%" } },
+        { class: "circle-3", style: { bottom: "20%", left: "15%" } },
+    ];
+
+    function updateCircles() {
+        const viewportWidth = window.innerWidth;
+
+        circles.forEach((circle) => {
+            const element = document.querySelector(`.${circle.class}`);
+            if (!element) return;
+
+            if (viewportWidth < 768) {
+                element.style.display = "none"; 
+            } else {
+                element.style.display = "block"; 
+                element.style.width = `${Math.min(viewportWidth * 0.23, 500)}px`;
+                element.style.height = `${Math.min(viewportWidth * 0.23, 500)}px`;
+            }
+        });
+    }
+
+    window.addEventListener("resize", updateCircles);
+    updateCircles();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
     const text = [
         "F", "R", 
         "<span class='solid-o o1'>O</span>", 
@@ -22,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     typeText();
 });
-
 
 document.addEventListener("DOMContentLoaded", () => {
     const records = document.querySelectorAll(".record");

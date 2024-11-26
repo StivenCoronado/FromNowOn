@@ -104,7 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Crear botón para mute/desmute
     const muteButton = document.createElement("button");
     muteButton.textContent = "🔊";
     muteButton.style.position = "fixed";
@@ -126,7 +125,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Guarda el estado del audio antes de salir
     window.addEventListener("beforeunload", () => {
         if (audio && !audio.paused) {
             sessionStorage.setItem("isPlaying", "true");
