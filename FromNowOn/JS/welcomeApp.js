@@ -1,4 +1,43 @@
 document.addEventListener("DOMContentLoaded", () => {
+   
+    const popupOverlay = document.createElement("div");
+    popupOverlay.classList.add("popup-overlay");
+
+    popupOverlay.innerHTML = `
+        <div class="popup-content">
+            <h1>Do you want to enable audio?</h1>
+            <button id="enable-audio">Enable</button>
+            <button id="disable-audio">Not Now</button>
+        </div>
+    `;
+
+    document.body.appendChild(popupOverlay);
+
+    const enableAudioBtn = document.getElementById("enable-audio");
+    const disableAudioBtn = document.getElementById("disable-audio");
+
+    const hidePopup = (callback) => {
+        popupOverlay.classList.add("hidden");
+        setTimeout(() => {
+            popupOverlay.remove(); 
+            if (callback) callback(); 
+        }, 500);
+    };
+
+    enableAudioBtn.addEventListener("click", () => {
+        sessionStorage.setItem("audioEnabled", "true"); 
+        hidePopup(); 
+    });
+
+    disableAudioBtn.addEventListener("click", () => {
+        sessionStorage.setItem("audioEnabled", "false"); 
+        hidePopup(() => {
+            window.location.href = "index.html"; 
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
     const circles = [
         { class: "circle-1", style: { top: "10%", left: "20%" } },
         { class: "circle-2", style: { top: "50%", right: "10%" } },
@@ -54,50 +93,41 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     const records = document.querySelectorAll(".record");
     const rotationSpeed = 3;
-    let audioEnabled = false;
-
-    const toast = document.getElementById("audio-permission-toast");
-    const acceptButton = document.getElementById("accept-audio");
-
-    acceptButton.addEventListener("click", () => {
-        audioEnabled = true;
-        toast.style.display = "none";
-    });
 
     records.forEach((record) => {
-        let rotation = 0; 
+        const audio = new Audio(record.getAttribute("data-audio")); // Obtiene el audio
+        let rotation = 0; // Ángulo inicial
         let isHovered = false;
-        const audio = new Audio(record.getAttribute("data-audio")); 
 
+        // Rotación continua del disco
         const rotate = () => {
             if (!isHovered) {
-                rotation += rotationSpeed; 
-                record.style.transform = `rotate(${rotation}deg)`; 
+                rotation += rotationSpeed; // Incrementa el ángulo
+                record.style.transform = `rotate(${rotation}deg)`; // Aplica la rotación
             }
-            requestAnimationFrame(rotate); 
+            requestAnimationFrame(rotate); // Llama al siguiente frame
         };
 
-        rotate(); 
+        rotate(); // Inicia la rotación
 
+        // Al pasar el mouse sobre el disco
         record.addEventListener("mouseenter", () => {
             isHovered = true;
-            record.style.transform = `rotate(${rotation}deg) scale(1.4)`; 
+            record.style.transform = `rotate(${rotation}deg) scale(1.4)`; // Combina rotación y escala
 
-            if (audioEnabled) {
-                audio.currentTime = 0;
-                audio.play().catch((error) => {
-                    console.warn("Error al intentar reproducir el audio:", error);
-                });
-            }
+            // Reproduce el audio al pasar el mouse
+            audio.currentTime = 0;
+            audio.play().catch((error) => {
+                console.warn("Error al intentar reproducir el audio:", error);
+            });
         });
 
+        // Al salir el mouse del disco
         record.addEventListener("mouseleave", () => {
             isHovered = false;
-            record.style.transform = `rotate(${rotation}deg)`;
-            if (audioEnabled) {
-                audio.pause(); 
-                audio.currentTime = 0; 
-            }
+            record.style.transform = `rotate(${rotation}deg)`; // Mantiene la rotación
+            audio.pause(); // Pausa el audio
+            audio.currentTime = 0; // Reinicia el audio
         });
     });
 });
