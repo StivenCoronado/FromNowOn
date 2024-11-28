@@ -4,11 +4,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; /* Asegura que las partículas estén detrás del contenido */
+    z-index: 1; 
 }
 body {
     font-family: Arial, sans-serif;
-    margin: 5rem 5vw 1rem 5vw; /* Cambiado el margen inferior a 1rem y usado vw para el margen lateral */
+    margin: 5rem 5vw 1rem 5vw;
     padding: 0;
     background-color: #ffffff;
     overflow: hidden;
@@ -23,41 +23,41 @@ body {
 }
 
 .contact h2 {
-    margin-top: 0; /* Elimina el margen superior */
-    margin-bottom: 3rem; /* Reduce el margen inferior */
+    margin-top: 0; 
+    margin-bottom: 3rem; 
     color: #000000;
     width: 98%;
 }   
 
 .texto {
     position: relative;
-    top: 21.2vh; /* Ajusta este valor según sea necesario */
-    font-size: clamp(0.8rem,0.6vw,0.4rem); /* Usa vw para que el tamaño de fuente sea responsivo */
-    line-height: 1.5; /* Mejora la legibilidad */
-    text-align: center; /* Centra el texto horizontalmente */
+    top: 21.2vh; 
+    font-size: clamp(0.8rem,0.6vw,0.4rem); 
+    line-height: 1.5; 
+    text-align: center;
 }
 
 .contact-info {
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    height: auto; /* Permite que la altura se ajuste automáticamente según el contenido */
-    width: 100%; /* Se mantiene al 100% del contenedor padre */
-    padding: 1%; /* Agrega un padding opcional */
+    justify-content: center; 
+    align-items: center; 
+    height: auto; 
+    width: 100%; 
+    padding: 1%;
 }
 
 .contact-info img {
-    opacity: 1; /* Cambia este valor al tamaño deseado */
-    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-    min-width: 20%; /* Establece un ancho mínimo en porcentaje */
+    opacity: 1; 
+    max-width: 100%;
+    height: auto; 
+    min-width: 20%;
 }
 
 
 .contact-count {
-    display: flex; /* Alinea los elementos hijos en una fila */
-    justify-content: center; /* Centra horizontalmente el contenedor */
-    align-items: center; /* Centra verticalmente el contenedor */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
 }
 
 .contact-1,
@@ -65,10 +65,10 @@ body {
 .contact-3,
 .contact-4 {
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    height: 10vh; /* Altura del contenedor relativa al viewport */
-    margin: 2%; /* Margen relativo al ancho de la pantalla */
+    justify-content: center; 
+    align-items: center; 
+    height: 10vh; 
+    margin: 2%; 
     z-index: 2;
 }
 
@@ -76,27 +76,26 @@ body {
 .contact-2 a img,
 .contact-3 a img,
 .contact-4 a img {
-    width: 2.5vw; /* Hacemos las imágenes más pequeñas con 2.5% del ancho del viewport */
-    height: auto; /* Mantiene la proporción de la imagen */
+    width: 2.5vw; 
+    height: auto;
     z-index: 2;
-    margin-top: 2cm; /* Ajustamos el margen superior para elevar la imagen dentro de su contenedor */
+    margin-top: 2cm; 
 }
 
-/* Media queries para pantallas más pequeñas */
 @media (max-width: 768px) {
     .contact-1,
     .contact-2,
     .contact-3,
     .contact-4 {
-        height: 15vh; /* Aumentamos la altura en pantallas pequeñas */
+        height: 15vh; 
     }
 
     .contact-1 a img,
     .contact-2 a img,
     .contact-3 a img,
     .contact-4 a img {
-        width: 5vw; /* Aumentamos un poco el tamaño de las imágenes en pantallas medianas */
-        margin-top: -2vh; /* Elevamos más las imágenes en pantallas medianas */
+        width: 5vw; 
+        margin-top: -2vh;
     }
 }
 
@@ -105,47 +104,45 @@ body {
     .contact-2,
     .contact-3,
     .contact-4 {
-        height: 20vh; /* Aumentamos la altura en pantallas extra pequeñas */
+        height: 20vh; 
     }
 
     .contact-1 a img,
     .contact-2 a img,
     .contact-3 a img,
     .contact-4 a img {
-        width: 1200vw; /* Ajustamos el tamaño de las imágenes aún más en pantallas muy pequeñas */
-        margin-top: -3vh; /* Elevamos más las imágenes en pantallas muy pequeñas */
+        width: 1200vw; 
+        margin-top: -3vh; 
     }
 }
 
 
 .contact-line {
-    width: 100%; /* Mantiene el ancho al 100% del contenedor */
-    height: 15vh; /* Altura relativa al 15% del alto del viewport */
-    margin-top: -10vh; /* Desplazamos hacia arriba con un margen relativo al alto del viewport */
+    width: 100%; 
+    height: 15vh;
+    margin-top: -10vh;
 }
 
-/* Media query para pantallas medianas */
 @media (max-width: 768px) {
     .contact-line {
-        height: 20vh; /* Aumentamos la altura para pantallas medianas */
-        margin-top: -6vh; /* Ajustamos el margen superior para pantallas medianas */
+        height: 20vh;
+        margin-top: -6vh; 
     }
 }
 
-/* Media query para pantallas pequeñas */
 @media (max-width: 480px) {
     .contact-line {
-        height: 25vh; /* Aumentamos aún más la altura en pantallas pequeñas */
-        margin-top: -7vh; /* Ajustamos el margen superior para pantallas muy pequeñas */
+        height: 25vh; 
+        margin-top: -7vh; 
     }
 }
 
 
 .texto2 {
     position: relative;
-    top: -19vh; /* Cambiado a vh para que sea responsive */
+    top: -19vh; 
     color: #000000;
-    font-size: 2rem; /* Cambia el tamaño del texto aquí */
+    font-size: 2rem;
 }
 
 .sidebar {
