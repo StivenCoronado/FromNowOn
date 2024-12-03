@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
             requestAnimationFrame(rotate); 
         };
 
-        rotate(); // Inicia la rotación
+        rotate(); 
 
         record.addEventListener("mouseenter", () => {
             isHovered = true;
@@ -159,4 +159,3 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
-

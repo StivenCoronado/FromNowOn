@@ -126,36 +126,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    const muteButton = document.createElement("button");
-    muteButton.textContent = "🔊";
-    muteButton.style.position = "fixed";
-    muteButton.style.top = "10px";
-    muteButton.style.right = "10px";
-    muteButton.style.padding = "10px";
-    muteButton.style.backgroundColor = "white";
-    muteButton.style.color = "black";
-    muteButton.style.border = "1px solid black";
-    muteButton.style.borderRadius = "5px";
-    muteButton.style.cursor = "pointer";
-    muteButton.style.zIndex = "9999";
-    document.body.appendChild(muteButton);
-
-    muteButton.addEventListener("click", () => {
-        if (audio) {
-            audio.muted = !audio.muted;
-            muteButton.textContent = audio.muted ? "🔇" : "🔊";
-        }
-    });
-
-    window.addEventListener("beforeunload", () => {
-        if (audio && !audio.paused) {
-            sessionStorage.setItem("isPlaying", "true");
-        } else {
-            sessionStorage.setItem("isPlaying", "false");
-        }
-    });
-});
-
 function animateMedia(mediaElement) {
     mediaElement.classList.add('animate');
     setTimeout(() => {
