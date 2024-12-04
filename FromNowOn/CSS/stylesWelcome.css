@@ -10,7 +10,7 @@ body, html {
     justify-content: center;
     align-items: center;
     font-family: Arial, sans-serif;
-    background-color: #ffacbc;
+    background-color: #fff;
     padding: calc(0.5rem + 1vh);
     overflow: hidden;
 }
@@ -179,34 +179,4 @@ body {
 
 .logo img {
     width: clamp(40px, 6vw, 100px); 
-}
-
-.circle {
-    position: absolute;
-    background-color: #ffacbc;
-    border-radius: 50%;
-    z-index: 0;
-    opacity: 1;
-    width: clamp(100px, 10vw, 300px);
-    height: clamp(100px, 10vw, 300px); 
-}
-
-.circle-1 {
-    top: -24%;
-    left: 17%;
-}
-
-.circle-2 {
-    right: -12%;
-}
-
-.circle-3 {
-    bottom: -12%;
-    left: -6%;
-}
-
-@media (max-width: 768px) {
-    .circle {
-        display: none; 
-    }
 }
