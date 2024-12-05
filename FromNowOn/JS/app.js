@@ -54,100 +54,113 @@ window.addEventListener('wheel', (event) => {
 thumbnailItems.forEach(item => {
     item.addEventListener('click', () => {
         const mediaElement = item.querySelector('img, video');
-        const mediaSrc = mediaElement.src;
-        const imgDescription1 = mediaElement.getAttribute('data-descripcionImagen1') || mediaElement.getAttribute('data-descripcionVideo1');
-        const imgDescription2 = mediaElement.getAttribute('data-descripcionImagen2') || mediaElement.getAttribute('data-descripcionVideo2');
+        const vimeoUrl = mediaElement.getAttribute('data-vimeo-url');
 
         fullscreenImage.src = '';
         fullscreenImage.style.display = 'none';
         const existingVideo = overlay.querySelector('video');
+        const existingIframe = overlay.querySelector('iframe');
+        
         if (existingVideo) {
             existingVideo.remove();
         }
+        if (existingIframe) {
+            existingIframe.remove();
+        }
 
-        if (mediaElement.tagName.toLowerCase() === 'video') {
+        if (vimeoUrl) {
+
+            const iframe = document.createElement('iframe');
+
+            const autoplayUrl = vimeoUrl.includes('?') ? `${vimeoUrl}?autoplay=1` : `${vimeoUrl}&autoplay=1`;
+            iframe.src = autoplayUrl;
+            iframe.frameBorder = '0';
+            iframe.allow = 'autoplay; fullscreen';
+            iframe.allowFullscreen = true;
+            iframe.style.width = '60%';  
+            iframe.style.height = '60%'; 
+            iframe.style.maxWidth = '60%';  
+            iframe.style.maxHeight = '60%'; 
+            iframe.style.margin = 'auto';  
+            iframe.style.display = 'block'; 
+            iframe.style.marginTop = '30px'; 
+            overlay.appendChild(iframe);
+        } else if (mediaElement.tagName.toLowerCase() === 'video') {
+
             const videoOverlay = document.createElement('video');
             videoOverlay.src = mediaSrc;
             videoOverlay.controls = true;
-            videoOverlay.style.maxWidth = '90%';
-            videoOverlay.style.maxHeight = '90%';
+            videoOverlay.style.maxWidth = '60%';
+            videoOverlay.style.maxHeight = '60%';
+            videoOverlay.style.margin = 'auto'; 
+            videoOverlay.style.display = 'block'; 
+            videoOverlay.style.marginTop = '30px'; 
             overlay.appendChild(videoOverlay);
             videoOverlay.play();
-        
-            overlayDescription1.innerHTML = imgDescription1; 
-            overlayDescription2.innerHTML = imgDescription2; 
-            fullscreenImage.style.display = 'none';
         } else {
+
             fullscreenImage.src = mediaSrc;
             fullscreenImage.style.display = 'block';
-            
-            overlayDescription1.innerHTML = imgDescription1; 
-            overlayDescription2.innerHTML = imgDescription2; 
         }
 
+        const imgDescription1 = mediaElement.getAttribute('data-description');
+        const imgDescription2 = mediaElement.getAttribute('data-description2');
+
+        overlayDescription1.innerHTML = imgDescription1;
+        overlayDescription2.innerHTML = imgDescription2;
+
+        
+        overlayDescription1.style.marginTop = '20px'; 
+        overlayDescription2.style.marginTop = '10px'; 
+
+
         overlay.style.display = 'flex';
+        overlay.style.flexDirection = 'column'; 
+        overlay.style.justifyContent = 'flex-start'; 
+
+
     });
 });
 
-overlay.addEventListener('click', () => {
-    overlay.style.display = 'none'; 
-    const existingVideo = overlay.querySelector('video');
-    if (existingVideo) {
-        existingVideo.pause(); 
-        existingVideo.remove(); 
+
+
+overlay.addEventListener('click', (event) => {
+
+    if (event.target === overlay) {
+        overlay.style.display = 'none';
+        const existingVideo = overlay.querySelector('video');
+        const existingIframe = overlay.querySelector('iframe');
+        
+        if (existingVideo) {
+            existingVideo.pause(); 
+            existingVideo.remove(); 
+        }
+        if (existingIframe) {
+            
+            existingIframe.src = ''; 
+            existingIframe.remove(); 
+        }
     }
 });
+
 
 document.querySelector('.close-button').addEventListener('click', () => {
     overlay.style.display = 'none'; 
     const existingVideo = overlay.querySelector('video');
+    const existingIframe = overlay.querySelector('iframe');
+    
     if (existingVideo) {
         existingVideo.pause(); 
         existingVideo.remove(); 
     }
+    if (existingIframe) {
+        existingIframe.src = ''; 
+        existingIframe.remove(); 
+    }
 });
 
-function animateMedia(mediaElement) {
-    mediaElement.classList.add('animate');
-    setTimeout(() => {
-        mediaElement.classList.remove('animate');
-    }, 600);
-}
 
-thumbnailItems.forEach(item => {
-    item.addEventListener('click', () => {
-        const mediaElement = item.querySelector('img, video');
-        const mediaSrc = mediaElement.src;
-        const imgDescription1 = mediaElement.getAttribute('data-description');
-        const imgDescription2 = mediaElement.getAttribute('data-description2');
 
-        fullscreenImage.src = '';
-        fullscreenImage.style.display = 'none';
-        const existingVideo = overlay.querySelector('video');
-        if (existingVideo) {
-            existingVideo.remove();
-        }
-
-        if (mediaElement.tagName.toLowerCase() === 'video') {
-            const videoOverlay = document.createElement('video');
-            videoOverlay.src = mediaSrc;
-            videoOverlay.controls = true;
-            videoOverlay.style.maxWidth = '90%';
-            videoOverlay.style.maxHeight = '90%';
-            overlay.appendChild(videoOverlay);
-            videoOverlay.play();
-            animateMedia(videoOverlay);
-        } else {
-            fullscreenImage.src = mediaSrc;
-            fullscreenImage.style.display = 'block';
-            animateMedia(fullscreenImage);
-        }
-
-        overlayDescription1.innerHTML = imgDescription1;
-        overlayDescription2.innerHTML = imgDescription2;
-        overlay.style.display = 'flex';
-    });
-});
 
 const style = document.createElement('style');
 style.innerHTML = `
