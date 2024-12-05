@@ -1,11 +1,4 @@
-#particles-js {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1; 
-}
+
 body {
     font-family: Arial, sans-serif;
     margin: 5rem 5vw 1rem 5vw;
@@ -22,35 +15,13 @@ body {
     z-index: 3;
 }
 
-.contact h2 {
-    margin-top: 0; 
-    margin-bottom: 3rem; 
-    color: #000000;
-    width: 98%;
-}   
-
-.texto {
-    position: relative;
-    top: 21.2vh; 
-    font-size: clamp(0.8rem,0.6vw,0.4rem); 
-    line-height: 1.5; 
-    text-align: center;
-}
-
-.contact-info {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    height: auto; 
-    width: 100%; 
-    padding: 1%;
-}
-
-.contact-info img {
-    opacity: 1; 
-    max-width: 100%;
-    height: auto; 
-    min-width: 20%;
+@keyframes aparecer {
+    0% {
+        opacity: 0; /* Inicialmente invisible */
+    }
+    100% {
+        opacity: 1; /* Finaliza completamente visible */
+    }
 }
 
 
@@ -80,6 +51,14 @@ body {
     height: auto;
     z-index: 2;
     margin: 0% 0% 0%;
+    transition: transform 0.3s ease; /* Agrega una transición suave */
+}
+
+.contact-1 a img:hover,
+.contact-2 a img:hover,
+.contact-3 a img:hover,
+.contact-4 a img:hover {
+    transform: scale(1.5); /* Escala la imagen al 110% */
 }
 
 @media (max-width: 768px) {
@@ -115,12 +94,18 @@ body {
         margin-top: -3vh; 
     }
 }
+.contact-line img {
+    width: 72%; /* Estira la imagen a todo el ancho */
+    height: 2%; /* Estira la imagen a toda la altura */
+    object-fit: cover; /* Asegura que la imagen cubra todo el área sin distorsionarse */
+}
 
 
 .contact-line {
     width: 100%; 
     height: 15vh;
-    margin-top: -15vh;
+    margin-top: -17vh;
+    margin-bottom: -4%;
 }
 
 @media (max-width: 768px) {
@@ -138,13 +123,12 @@ body {
 }
 
 
-.texto2 {
+.texto2{
     position: relative;
-    top: -19vh; 
+    margin-top: 4vh; 
     color: #000000;
     font-size: 2rem;
-}
-
+}   
 .sidebar {
     position: fixed;
     z-index: 2;
@@ -173,30 +157,6 @@ body {
     background-color: #ffffff; 
     color: #000000 !important; 
 }
-
-.bg {
-    animation:slide 5s ease-in-out infinite alternate;
-    background-image: linear-gradient(-60deg, #ffffff41 50%, #ffacbd6c 50%);
-    bottom:0;
-    left:-50%;
-    opacity:.5;
-    position:fixed;
-    right:-50%;
-    top:0;
-    z-index:1;
-  }
-  
-  .bg2 {
-    animation-direction:alternate-reverse;
-    animation-duration:5s;
-    z-index: 1;
-  }
-  
-  .bg3 {
-    animation-duration:5s;
-  }
-  
-
   h1 {
     font-family:monospace;
   }
@@ -208,4 +168,107 @@ body {
     100% {
       transform:translateX(25%);
     }
-  }
+}
+.circle {
+    position: absolute;
+    background-color: #ffacbc;
+    border-radius: 50%;
+    z-index: 10; /* Los círculos estarán encima del texto */
+    opacity: 0; /* Comienza invisible */
+    animation: aparecer 1s ease-out forwards; /* Aparecer durante 1 segundo para los círculos */
+    width: clamp(120px, 5vw, 150px);
+    height: clamp(130px, 5vw, 150px);
+}
+
+.circle-1 {
+    top: 37%;
+    left: 29%;
+}
+
+.circle-2 {
+    right: 25.3%;
+    bottom: 49%;
+}
+
+.circle-3 {
+    bottom: 49%;
+    left: 51.1%;
+}
+
+.texto-1 {
+    margin-top: 20%;
+    margin-bottom: -10%;
+    color: #ffacbc;
+    width: 98%;
+    font-size: 10rem;
+    text-align: center;
+    font-weight: bold;
+    opacity: 0; /* Comienza invisible */
+    animation: aparecer 2s ease-out forwards; /* Aparecer durante 2 segundos para el texto */
+    z-index: 5; /* El texto estará debajo de los círculos */
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+
+    .boton {
+        padding: 10px 20px;
+        background-color: #000000;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 8px;
+        cursor: pointer;
+        
+        /* Posicionamiento fijo en la parte inferior izquierda */
+        position: fixed;
+        bottom: 2px; /* Espacio desde la parte inferior de la pantalla */
+        left: 5px; /* Espacio desde el borde izquierdo de la pantalla */
+    }
+    
+    /* Estilo del botón cuando se pasa el cursor por encima */
+    .boton:hover {
+        background-color: #333333;
+    }
+    
+    .mensaje-emergente {
+        display: none; /* Ocultar el mensaje inicialmente */
+        padding: 15px;
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        border: 2px solid #000000; /* Borde negro */
+        border-radius: 5px;
+        margin-top: 220px; /* Distancia hacia abajo */
+        font-size: 13px;
+        position: relative; /* Necesario para la posición de la X */
+        left: 50px; /* Mueve el mensaje a la derecha */
+    }
+    
+    
+    
+    /* Estilo para la X de cierre */
+    .cerrar {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 18px;
+        cursor: pointer;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+    }
+    
+    .cerrar:hover {
+        color: #ddd;
+    }
+    
+    
+
