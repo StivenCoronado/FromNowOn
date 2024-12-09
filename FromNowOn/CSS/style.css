@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700&display=swap');
 
-/* General Styles */
 body {
     margin: 0;
     background-color: #000;
@@ -13,7 +12,6 @@ a {
     text-decoration: none;  
 }
 
-/* Header Styles */
 header {
     width: 1140px;
     max-width: 80%;
@@ -86,7 +84,6 @@ header a:hover {
     z-index: 1;
 }
 
-/* Animations for Slider Content */
 .slider .list .item:nth-child(1) .content .title,
 .slider .list .item:nth-child(1) .content .type,
 .slider .list .item:nth-child(1) .content .description,
@@ -199,7 +196,6 @@ header a:hover {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Overlay Styles */
 .overlay {
     position: fixed;
     top: 0;
@@ -239,7 +235,6 @@ header a:hover {
     bottom: 10px;
 }
 
-/* Button Styles */
 .behind-the-scenes-button {
     margin-left: 15px; 
     padding: 10px 20px; 
@@ -276,7 +271,6 @@ header a:hover {
     transform: scale(1.1); 
 }
 
-/* Sidebar Styles */
 .sidebar {
     position: fixed;
     top: 50%;
@@ -304,7 +298,6 @@ header a:hover {
     background-color: #ffacbc; 
 }
 
-/* Keyframes Animations */
 @keyframes contentOut {
     to {
         transform: translateY(-150px);
@@ -354,7 +347,6 @@ header a:hover {
     }
 }
 
-/* Media Queries */
 @media screen and (max-width: 678px) {
     .slider .list .item .content {
         padding-right: 0;

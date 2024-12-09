@@ -7,8 +7,8 @@
 body, html {
     height: 100%;
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
+    justify-content: center; 
+    align-items: center; 
     font-family: Arial, sans-serif;
     background-color: #fff;
     overflow: hidden;
@@ -21,13 +21,12 @@ body {
     border-radius: calc(30px);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Cambiar a flex-start para que se controle con margen */
-    align-items: center;
+    justify-content: flex-start; 
     padding: calc(2rem + 1vh);
 }
 
 .container {
-    margin-top: calc(5rem + 2vh); /* Ajusta este valor para mover hacia abajo */
+    margin-top: calc(5rem + 2vh);
     display: flex;
     flex-direction: column;
     justify-content: center;
