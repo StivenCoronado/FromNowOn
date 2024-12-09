@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Verifica si estamos en welcome.html
+    
     if (window.location.pathname.includes("welcome.html")) {
         return;
     }
@@ -38,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Crear botón de mute
     const muteButton = document.createElement("div");
     muteButton.id = "mute-toggle";
     muteButton.style.position = "fixed";
@@ -102,14 +101,38 @@ document.addEventListener("DOMContentLoaded", () => {
         updateButtonAnimation();
     }
 
-    const videos = document.querySelectorAll("video");
-    videos.forEach((video) => {
-        video.addEventListener("play", () => {
-            if (!globalAudio.muted) globalAudio.pause();
+    const overlay = document.querySelector('.overlay');
+    if (overlay) {
+        overlay.addEventListener("click", (event) => {
+            if (event.target === overlay || event.target.classList.contains('close-button')) {
+                const globalAudio = document.getElementById("global-audio");
+                if (globalAudio && sessionStorage.getItem("isPlaying") === "true") {
+                    globalAudio.play().catch((error) => {
+                        console.warn("Error al intentar reanudar el audio global:", error);
+                    });
+                }
+            }
         });
-        video.addEventListener("pause", () => {
-            if (isPlaying && !globalAudio.muted) globalAudio.play();
+
+        overlay.addEventListener("animationstart", () => {
+            if (globalAudio) {
+                globalAudio.muted = true;
+            }
         });
+    }
+
+    document.addEventListener("visibilitychange", () => {
+        if (globalAudio) {
+            if (document.visibilityState === "hidden") {
+                globalAudio.pause();
+            } else if (document.visibilityState === "visible") {
+                if (sessionStorage.getItem("isPlaying") === "true" && !globalAudio.muted) {
+                    globalAudio.play().catch((error) => {
+                        console.warn("Error al intentar reanudar el audio global:", error);
+                    });
+                }
+            }
+        }
     });
 
     const style = document.createElement("style");

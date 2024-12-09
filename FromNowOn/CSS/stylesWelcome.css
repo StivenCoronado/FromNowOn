@@ -7,23 +7,32 @@
 body, html {
     height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
     font-family: Arial, sans-serif;
     background-color: #fff;
-    padding: calc(0.5rem + 1vh);
     overflow: hidden;
 }
 
 body {
     background-color: #fff;
-    width: calc(98%); 
-    height: calc(97% );
-    border-radius: calc(30px); 
+    width: calc(98%);
+    height: calc(97%);
+    border-radius: calc(30px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Cambiar a flex-start para que se controle con margen */
+    align-items: center;
+    padding: calc(2rem + 1vh);
+}
+
+.container {
+    margin-top: calc(5rem + 2vh); /* Ajusta este valor para mover hacia abajo */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .popup-overlay {
@@ -118,27 +127,14 @@ body {
     font-size: inherit; 
 }
 
-.solid-o.o1 {
-    width: 0.75em;
-    height: 0.80em;
-    top: -0.1em; 
-    left: 0;
-}
-
-.solid-o.o2 {
-    width: 0.75em;
-    height: 0.80em;
-    top: -0.1em;
-    left: 0; 
-}
-
+.solid-o.o1,
+.solid-o.o2,
 .solid-o.o3 {
     width: 0.75em;
     height: 0.80em;
     top: -0.1em;
-    left: 0; 
+    left: 0;
 }
-
 
 .cursor {
     font-weight: bold;
@@ -158,6 +154,44 @@ body {
     }
 }
 
+.record-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+.song-info {
+    font-size: clamp(0.6rem, 1.2vw, 0.7rem); 
+    color: #333;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.song-info .author {
+    font-size: clamp(0.6rem, 2vw, 0.5rem);
+    color: #555;
+    font-style: italic;
+}
+
+.record-selection {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    gap: clamp(2rem, 4vw, 3rem); 
+    margin: clamp(1rem, 3vh, 3rem) 0;
+    z-index: 1;
+}
+
+.record-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; 
+    min-width: 120px; 
+}
+
 .record-selection img {
     width: clamp(50px, 5vw, 120px);
     height: clamp(50px, 5vw, 120px);
@@ -165,18 +199,17 @@ body {
     transition: transform 0.2s ease-in-out;
 }
 
-.record-selection {
-    display: flex;
-    justify-content: center;
-    gap: clamp(1rem, 3vw, 2rem);
-    margin: clamp(1rem, 3vh, 3rem) 0; 
-    z-index: 1;
+.record-text {
+    margin-top: 0.5rem; 
+    font-size: clamp(0.8rem, 1.2vw, 1rem);
+    color: #333;
 }
 
+
 .logo {
-    margin-top: clamp(1rem, 2vh, 3rem); 
+    margin-top: calc(1rem + 2vh);
 }
 
 .logo img {
-    width: clamp(40px, 6vw, 100px); 
+    width: clamp(40px, 6vw, 100px);
 }
