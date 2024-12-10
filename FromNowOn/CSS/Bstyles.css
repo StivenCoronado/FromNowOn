@@ -17,10 +17,10 @@ body {
 
 @keyframes aparecer {
     0% {
-        opacity: 0; 
+        opacity: 0; /* Inicialmente invisible */
     }
     100% {
-        opacity: 1; 
+        opacity: 1; /* Finaliza completamente visible */
     }
 }
 
@@ -41,6 +41,7 @@ body {
     height: 10vh; 
     margin: 2%; 
     z-index: 2;
+    margin-top: 300px;
 }
 
 .contact-1 a img,
@@ -51,14 +52,14 @@ body {
     height: auto;
     z-index: 2;
     margin: 0% 0% 0%;
-    transition: transform 0.3s ease; 
+    transition: transform 0.3s ease; /* Agrega una transición suave */
 }
 
 .contact-1 a img:hover,
 .contact-2 a img:hover,
 .contact-3 a img:hover,
 .contact-4 a img:hover {
-    transform: scale(1.5); 
+    transform: scale(1.5); /* Escala la imagen al 110% */
 }
 
 @media (max-width: 768px) {
@@ -94,40 +95,12 @@ body {
         margin-top: -3vh; 
     }
 }
-.contact-line img {
-    width: 72%; 
-    height: 2%; 
-    object-fit: cover; 
-}
-
-
-.contact-line {
-    width: 100%; 
-    height: 15vh;
-    margin-top: -17vh;
-    margin-bottom: -4%;
-}
-
-@media (max-width: 768px) {
-    .contact-line {
-        height: 20vh;
-        margin-top: -6vh; 
-    }
-}
-
-@media (max-width: 480px) {
-    .contact-line {
-        height: 25vh; 
-        margin-top: -7vh; 
-    }
-}
-
 
 .texto2{
     position: relative;
-    margin-top: 4vh; 
+    margin-top: 1vh; 
     color: #000000;
-    font-size: 2rem;
+    font-size: 1rem;
 }   
 .sidebar {
     position: fixed;
@@ -169,44 +142,61 @@ body {
       transform:translateX(25%);
     }
 }
-.circle {
-    position: absolute;
-    background-color: #ffacbc;
-    border-radius: 50%;
-    z-index: 10; 
-    opacity: 0; 
-    animation: aparecer 1s ease-out forwards; 
-    width: clamp(120px, 5vw, 150px);
-    height: clamp(130px, 5vw, 150px);
-}
 
-.circle-1 {
-    top: 37%;
-    left: 29%;
-}
-
-.circle-2 {
-    right: 25.3%;
-    bottom: 49%;
-}
-
-.circle-3 {
-    bottom: 49%;
-    left: 51.1%;
-}
 
 .texto-1 {
-    margin-top: 20%;
-    margin-bottom: -10%;
-    color: #ffacbc;
-    width: 98%;
-    font-size: 10rem;
-    text-align: center;
-    font-weight: bold;
-    opacity: 0; 
-    animation: aparecer 2s ease-out forwards; 
-    z-index: 5; 
+    display: flex;               /* Usamos flexbox para centrar el contenido */
+    justify-content: center;     /* Centra la imagen horizontalmente */
+    align-items: center;         /* Centra la imagen verticalmente */
+    margin-top: 25vh;            /* Ajusta el espacio superior según el tamaño de la pantalla */
+    margin-bottom: -15%;         
+    width: 70%;                 /* Ajustamos el ancho a un porcentaje relativo */
+    max-width: 30em;            /* Tamaño máximo para pantallas grandes */
+    height: auto;               /* La altura se ajusta automáticamente según el contenido */
+    opacity: 0;                 /* Comienza invisible */
+    animation: aparecer 2s ease-out forwards; /* Aparecer durante 2 segundos */
+    z-index: 5;
+    margin-left: 10%;           /* Centra el contenido horizontalmente en pantallas grandes */
 }
+
+.texto-1 img {
+    width: 290%;                 /* La imagen se ajusta al 100% del contenedor */
+    height: auto; 
+    margin-top: 5%;               /* Mantiene las proporciones de la imagen */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 1024px) {
+    .texto-1 {
+        margin-top: 15vh; /* Menos margen superior para pantallas medianas */
+        margin-left: 5%;  /* Alineación más centrada */
+        width: 80%;       /* Mayor tamaño en pantallas más pequeñas */
+    }
+    .texto-1 img {
+        width: 100%;      /* Asegura que la imagen ocupe todo el ancho disponible */
+    }
+}
+
+@media (max-width: 768px) {
+    .texto-1 {
+        margin-top: 20vh; /* Mayor margen superior para pantallas aún más pequeñas */
+        width: 90%;       /* Aumenta el tamaño relativo de la imagen */
+        margin-left: 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .texto-1 {
+        margin-top: 25vh; /* Aumenta aún más el margen superior */
+        width: 95%;       /* La imagen toma casi todo el ancho disponible */
+        margin-left: 5%;  /* Alineación centrada en pantallas móviles */
+    }
+    .texto-1 img {
+        width: 100%;      /* La imagen siempre ocupa el 100% del ancho disponible */
+    }
+}
+
+
 
 @keyframes aparecer {
     0% {
@@ -216,50 +206,103 @@ body {
         opacity: 1;
     }
 }
+/*sirve el boton*/
 
 
 
+.boton {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;  /* Usamos rem en lugar de px para mayor flexibilidad */
+    cursor: pointer;
 
+    /* Posicionamiento fijo en la parte inferior izquierda */
+    position: fixed;
+    bottom: 2%; /* Espacio desde la parte inferior de la pantalla */
+    left: 5%; /* Espacio desde el borde izquierdo de la pantalla */
+}
+
+/* Estilo del botón cuando se pasa el cursor por encima */
+.boton:hover {
+    background-color: #333333;
+}
+
+.mensaje-emergente {
+    display: none; /* Ocultar el mensaje inicialmente */
+    padding: 15px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: 2px solid #000000; /* Borde negro */
+    border-radius: 5px;
+    margin-top: 10px; /* Distancia hacia abajo */
+    font-size: 1rem; /* Usamos rem para flexibilidad */
+    position: relative; /* Necesario para la posición de la X */
+    left: 190px; /* Ajusta la posición */
+    max-width: 90%; /* Limita el ancho del mensaje emergente */
+}
+
+/* Estilo para la X de cierre */
+.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2rem; /* Usamos rem para la flexibilidad */
+    cursor: pointer;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+
+.cerrar:hover {
+    color: #ddd;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 1024px) {
     .boton {
-        padding: 10px 20px;
-        background-color: #000000;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        font-size: 8px;
-        cursor: pointer;
-        position: fixed;
-        bottom: 2px; 
-        left: 5px;
+        bottom: 5%; /* Más espacio desde el fondo en pantallas medianas */
+        left: 5%; /* Mantener la alineación izquierda */
+        font-size: 1.1rem; /* Aumentamos el tamaño de la fuente ligeramente */
     }
-    
-    .boton:hover {
-        background-color: #333333;
-    }
-    
+
     .mensaje-emergente {
-        display: none; 
-        padding: 15px;
-        background-color: #ffffff;
-        color: rgb(0, 0, 0);
-        border: 2px solid #000000; 
-        border-radius: 5px;
-        margin-top: 220px;
-        font-size: 13px;
-        position: relative; 
-        left: 50px; 
+        left: 15px; /* Ajustamos la posición de la ventana emergente */
+        max-width: 80%; /* Más pequeño en pantallas medianas */
+    }
+}
+
+@media (max-width: 768px) {
+    .boton {
+        bottom: 5%; /* Más espacio en la parte inferior */
+        left: 5%; /* Alineación similar */
+        font-size: 1.2rem; /* Aumentamos aún más el tamaño de la fuente */
+    }
+
+    .mensaje-emergente {
+        left: 10px; /* Mantener la posición más centrada */
+        max-width: 85%; /* Ajuste para pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .boton {
+        bottom: 5%; /* Ajuste para pantallas pequeñas */
+        left: 10%; /* Ajuste para alineación mejor en móviles */
+        font-size: 1.5rem; /* Más grande en dispositivos móviles */
+    }
+
+    .mensaje-emergente {
+        left: 5px; /* Menos desplazamiento a la izquierda */
+        max-width: 90%; /* Asegura que el mensaje no se desborde */
+        font-size: 1rem; /* Tamaño adecuado para pantallas pequeñas */
     }
 
     .cerrar {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 18px;
-        cursor: pointer;
-        font-weight: bold;
-        color: rgb(0, 0, 0);
+        font-size: 1.5rem; /* Aumentamos el tamaño de la X en móviles */
     }
+}
+
     
-    .cerrar:hover {
-        color: #ddd;
-    }
+
