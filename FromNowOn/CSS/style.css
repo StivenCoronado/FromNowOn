@@ -297,13 +297,13 @@ header a:hover {
 
 .overlay-description-container {
     display: flex; 
-    justify-content: space-between; 
-    align-items: flex-start;
-    gap: 10px; 
+    justify-content: flex-start; 
+    align-items: center;
+    gap: 60px; 
     flex-wrap: wrap; 
     padding: 20px; 
     position: absolute;
-    width: 100%; 
+    width: auto; 
     box-sizing: border-box; 
     max-width: 1200px; 
     margin: 0 auto; 
