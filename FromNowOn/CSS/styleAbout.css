@@ -134,33 +134,43 @@ top: 50px;
   color: #fff;
 }
 
-.sidebar a {
-  padding: 10px;
-  text-decoration: none;
-  color: #fff;
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  text-align: center;
-  border-bottom: 1px solid #fff;
-}
-.sidebar:active {
-  background-color: #ffffff; 
-  color: black;              
+.sidebar {
+position: fixed;
+top: 50%;
+right: -0.24%;
+transform: translateY(-50%);
+display: flex;
+flex-direction: column;
+background-color: white;
+color: black;
+font-family: Arial, sans-serif;
+
 }
 
-.sidebar:focus {
-  outline: none; 
-  background-color: #ffffff; 
-  color: black; 
+.sidebar a {
+padding: 10px;
+text-decoration: none;
+color: black;
+writing-mode: vertical-rl;
+text-orientation: mixed;
+font-weight: bold;
+text-align: center;
+border-bottom: 1px solid black;
 }
+
+.sidebar a.active {
+background-color: #000;
+color: white; 
+}
+
 .sidebar a:hover {
-  background-color: #ffffff; 
-  color: black;
+background-color: #ffacbc; 
 }
 .my-button.selected {
   background-color: #fafafa;
   color: black; 
 }
+
 
 #particles-js {
 width:100%;
