@@ -166,3 +166,79 @@ document.querySelector('.close-button').addEventListener('click', () => {
         });
     }
 });
+
+
+// Selecciona todos los elementos de tipo
+const projectTypes = document.querySelectorAll('.content .type');
+
+// Agrega un evento de clic a cada uno de ellos
+projectTypes.forEach((type, index) => {
+    type.addEventListener('click', () => {
+        // Selecciona el thumbnail correspondiente al índice
+        const correspondingThumbnail = thumbnailItems[index];
+        const mediaElement = correspondingThumbnail.querySelector('img, video');
+        const vimeoUrl = mediaElement.getAttribute('data-vimeo-url');
+
+        // Pausar la música al abrir el overlay
+        const globalAudio = document.getElementById("global-audio");
+        if (globalAudio && !globalAudio.paused) {
+            globalAudio.pause();
+        }
+
+        fullscreenImage.src = '';
+        fullscreenImage.style.display = 'none';
+        const existingVideo = overlay.querySelector('video');
+        const existingIframe = overlay.querySelector('iframe');
+
+        if (existingVideo) {
+            existingVideo.remove();
+        }
+        if (existingIframe) {
+            existingIframe.remove();
+        }
+
+        if (vimeoUrl) {
+            const iframe = document.createElement('iframe');
+            const autoplayUrl = vimeoUrl.includes('?') ? `${vimeoUrl}?autoplay=1` : `${vimeoUrl}&autoplay=1`;
+            iframe.src = autoplayUrl;
+            iframe.frameBorder = '0';
+            iframe.allow = 'autoplay; fullscreen';
+            iframe.allowFullscreen = true;
+            iframe.style.width = '60%';  
+            iframe.style.height = '60%'; 
+            iframe.style.maxWidth = '60%';  
+            iframe.style.maxHeight = '60%'; 
+            iframe.style.margin = 'auto';  
+            iframe.style.display = 'block'; 
+            iframe.style.marginTop = '30px'; 
+            overlay.appendChild(iframe);
+        } else if (mediaElement.tagName.toLowerCase() === 'video') {
+            const videoOverlay = document.createElement('video');
+            videoOverlay.src = mediaElement.src; // Cambia mediaSrc a mediaElement.src
+            videoOverlay.controls = true;
+            videoOverlay.style.maxWidth = '60%';
+            videoOverlay.style.maxHeight = '60%';
+            videoOverlay.style.margin = 'auto'; 
+            videoOverlay.style.display = 'block'; 
+            videoOverlay.style.marginTop = '30px'; 
+            overlay.appendChild(videoOverlay);
+            videoOverlay.play();
+        } else {
+            fullscreenImage.src = mediaElement.src; // Cambia mediaSrc a mediaElement.src
+            fullscreenImage.style.display = 'block';
+        }
+
+        const imgDescription1 = mediaElement.getAttribute('data-description');
+        const imgDescription2 = mediaElement.getAttribute('data-description2');
+
+        overlayDescription1.innerHTML = imgDescription1;
+        overlayDescription2.innerHTML = imgDescription2;
+
+        overlayDescription1.style.marginTop = '20px'; 
+        overlayDescription2.style.marginTop = '10px'; 
+
+        overlay.style.display = 'flex';
+        overlay.style.flexDirection = 'column'; 
+        overlay.style.justifyContent = 'flex-start'; 
+    });
+});

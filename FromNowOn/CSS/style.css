@@ -95,6 +95,22 @@ header a:hover {
     font-size: 5em;
     font-weight: bold;
     line-height: 1.3em;
+    transition: transform 0.3s ease;
+}
+
+.slider .list .item .content .type {
+    color: #ffacbc;
+    transition: color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.slider .list .item .content .type:hover {
+    color: white;
+    transform: scale(1.05);
+}
+
+.slider .list .item .content .title:hover {
+    transform: scale(1.05);
 }
 
 .slider .list .item .type {
@@ -153,7 +169,7 @@ header a:hover {
 }
 
 .slider.next .thumbnail {
-    animation: effectNext .5s linear 1 forwards;
+    animation: effectNext 5s linear 1 forwards;
 }
 
 .slider.prev .list .item:nth-child(2) {
@@ -208,6 +224,7 @@ header a:hover {
         height: 150px;
     }
 }
+
 
 .thumbnail {
     position: absolute;
