@@ -130,6 +130,12 @@ body {
     background-color: #ffffff; 
     color: #000000 !important; 
 }
+
+.sidebar a.active {
+    background-color: #ffacbc;
+    color: white; 
+    }
+    
   h1 {
     font-family:monospace;
   }
