@@ -54,12 +54,10 @@
     
     <script src="../JS/audioManager.js"></script>
 
-    <!-- Botón que dispara el mensaje emergente -->
     <button class="boton" onclick="mostrarMensaje()">PRIVACY TERMS</button>
 
-    <!-- El mensaje emergente -->
     <div id="mensaje" class="mensaje-emergente">
-        <!-- X para cerrar el mensaje -->
+
         <span class="cerrar" onclick="cerrarMensaje()">X</span>
         Imprint
     Close
@@ -88,16 +86,16 @@
     </div>
     
     <script>
-        // Función que muestra el mensaje cuando se presiona el botón
+  
         function mostrarMensaje() {
             var mensaje = document.getElementById("mensaje");
-            mensaje.style.display = "block"; // Mostrar el mensaje
+            mensaje.style.display = "block"; 
         }
     
-        // Función para cerrar el mensaje
+     
         function cerrarMensaje() {
             var mensaje = document.getElementById("mensaje");
-            mensaje.style.display = "none"; // Ocultar el mensaje
+            mensaje.style.display = "none"; 
         }
     </script>
 </body>
