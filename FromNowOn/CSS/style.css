@@ -412,6 +412,10 @@ header a:hover {
 .sidebar a:hover {
     background-color: #ffacbc; 
 }
+.sidebar a.active {
+    background-color: #000; /* Fondo oscuro */
+    color: white; /* Texto blanco cuando el enlace está activo */
+}
 
 @keyframes contentOut {
     to {
