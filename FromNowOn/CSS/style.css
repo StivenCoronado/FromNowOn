@@ -13,13 +13,15 @@ a {
 }
 
 header {
-    width: 1140px;
-    max-width: 80%;
-    margin: auto;
+    width: 100%; /* Ocupa el 100% del ancho disponible */
+    max-width: 80%; /* Limita el ancho máximo al 80% */
     height: 50px;
     display: flex;
     align-items: center;
-    position: relative;
+    position: fixed; /* Fija el header en la parte superior */
+    right: 0; /* Alinea el header al lado derecho */
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%); /* Ajusta la posición para centrar */
     z-index: 100;
 }
 
@@ -35,11 +37,23 @@ header a:hover {
     border-radius: 2px;
 }
 
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    header {
+        height: 40px; /* Ajusta la altura para móviles */
+    }
+
+    header a {
+        padding: 4px 8px; /* Ajusta el padding para móviles */
+    }
+}
+
 /* Slider Styles */
 .slider {
-    height: 100vh;
-    width: 100%;
+    height: 100vh; /* Asegúrate de que el slider ocupe toda la altura de la ventana */
+    width: 100vw; /* Asegúrate de que el slider ocupe toda la anchura de la ventana */
     overflow: hidden;
+    position: relative; /* Asegúrate de que el slider tenga un contexto de posicionamiento */
 }
 
 .slider .list .item {
@@ -51,15 +65,15 @@ header a:hover {
 
 .slider .list .item img,
 .slider .list .item video { 
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100%; /* Cambiado a 100% para que se ajuste al contenedor */
+    height: 100%; /* Cambiado a 100% para que se ajuste al contenedor */
+    object-fit: cover; /* Mantiene la proporción y cubre el área */
 }
 
 .slider .list .item .content {
     position: absolute;
     top: 20%;
-    width: 1140px;
+    width: 100%; /* Cambiado a 100% para que se ajuste al contenedor */
     max-width: 80%;
     left: 50%;
     transform: translateX(-50%);
@@ -71,7 +85,7 @@ header a:hover {
 
 .slider .list .item .content .title,
 .slider .list .item .content .type {
-    font-size: 5em;
+    font-size: 5em; /* Tamaño de fuente grande */
     font-weight: bold;
     line-height: 1.3em;
 }
@@ -84,6 +98,7 @@ header a:hover {
     z-index: 1;
 }
 
+/* Animaciones */
 .slider .list .item:nth-child(1) .content .title,
 .slider .list .item:nth-child(1) .content .type,
 .slider .list .item:nth-child(1) .content .description,
@@ -161,21 +176,51 @@ header a:hover {
     animation: contentOut 1.5s linear 1 forwards !important;
 }
 
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .slider .list .item .content {
+        padding-right: 10%; /* Reduce el padding en pantallas más pequeñas */
+    }
+
+    .slider .list .item .content .title,
+    .slider .list .item .content .type {
+        font-size: 3em; /* Reduce el tamaño de fuente en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .slider .list .item .content {
+        top: 10%; /* Ajusta la posición en pantallas muy pequeñas */
+    }
+
+    .slider .list .item .content .title,
+    .slider .list .item .content .type {
+        font-size: 2.5em; /* Reduce aún más el tamaño de fuente */
+    }
+
+    .slider.next .list .item:nth-child(1) img,
+    .slider.next .list .item:nth-child(1) video {
+        width: 100px; /* Ajusta el tamaño de las imágenes/videos en pantallas pequeñas */
+        height: 150px;
+    }
+}
+
 /* Thumbnail Styles */
+
 .thumbnail {
     position: absolute;
     bottom: 50px;
     left: 50%;
-    transform: translateX(100px); 
     width: max-content;
-    z-index: 100;
+    z-index: 2;
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .thumbnail .item {
-    width: 200px;
-    height: 270px;
+    width: 200px; 
+    height: 270px; 
     flex-shrink: 0;
     position: relative;
 }
@@ -195,6 +240,33 @@ header a:hover {
     cursor: pointer;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
+
+
+@media (max-width: 768px) {
+    .thumbnail {
+        bottom: 30px; 
+        gap: 15px; 
+    }
+
+    .thumbnail .item {
+        width: 150px; 
+        height: 200px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .thumbnail {
+        bottom: 20px;
+        gap: 10px;
+    }
+
+    .thumbnail .item {
+        width: 100px; 
+        height: 150px;
+    }
+}
+
+
 
 .overlay {
     position: fixed;
@@ -228,12 +300,41 @@ header a:hover {
     display: flex; 
     justify-content: space-between; 
     align-items: flex-start;
-    gap: 30px; 
+    gap: 10px; 
     flex-wrap: wrap; 
     padding: 20px; 
     position: absolute;
-    bottom: 10px;
+    width: 100%; 
+    box-sizing: border-box; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    bottom: 40px;
 }
+
+.overlay-description-container > div { 
+    flex: 1 1 200px; 
+    min-width: 150px; 
+    max-width: 300px; 
+    box-sizing: border-box; 
+    font-size: 0.8rem; 
+}
+
+@media (max-width: 768px) {
+    .overlay-description-container {
+        flex-direction: column; 
+        align-items: center; 
+        gap: 10px; 
+        padding: 10px; 
+    }
+
+    .overlay-description-container > div {
+        flex: 1 1 100%; 
+        max-width: none; 
+        
+    }
+}
+
+
 
 .behind-the-scenes-button {
     margin-left: 15px; 
