@@ -1,24 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <link rel="stylesheet" href="../CSS/Bstyles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
     <link rel="icon" href="../IMG/logoFNO.png" type="image/png">
-    <style>
-    </style>
 </head>
 <body>
 <section class="contact">
     <div class="contact-container">
         
         <div class="texto-1">
-            <p>FROM NOW ON</p>
+            <a href="">
+                <img src="../IMG/slogo.png" alt="Logo 1" />
+            </a>
         </div>
-        <div class="circle circle-1"></div>
-        <div class="circle circle-2"></div>
-        <div class="circle circle-3"></div>
+       
         <div class="contact-count">
             <div class="contact-1">
                 <a href="https://vimeo.com/fromnowonit" target="_blank">
@@ -40,87 +38,67 @@
                     <img src="../IMG/instagram.png" alt="Logo 4" />
                 </a>
             </div>
-            
         </div>
         
-        <div class="contact-line">
-            <a href="">
-                <img src="../IMG/line.png" alt="Logo 4" />
-            </a>
-        </div>
         <div class="texto2">
-            <h2 class="texto2">info@fromnowon.it</h2>
+            <h2>info@fromnowon.it</h2>
         </div>
     </div>
+
     <aside class="sidebar">
         <a href="../HTML/index.html">HOME</a>
         <a href="../HTML/about.html">ABOUT</a>
         <a href="../HTML/contact.html">CONTACT</a>
     </aside>
     
-    <div id="particles-js"></div>
-<script src="../JS/particles.min.samuel.js"></script>
-<script src="../JS/particlesjs-configsamuel.json"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        particlesJS.load('particles-js', '../sparticles.js-master/sparticlesjs-config.json', function() {
-            console.log('callback - particles.js config loaded');
-        });
-    });
-</script>
-<div class="bg"></div>
-    <div class="bg bg2"></div>
-    <div class="bg bg3"></div>
-    <script src="../JS/contact.js"></script>
-
+    
     <script src="../JS/audioManager.js"></script>
 
+    <!-- Botón que dispara el mensaje emergente -->
+    <button class="boton" onclick="mostrarMensaje()">PRIVACY TERMS</button>
 
-<button class="boton" onclick="mostrarMensaje()">PRIVACY TERMS</button>
-
-<div id="mensaje" class="mensaje-emergente">
-    <!-- X para cerrar el mensaje -->
-    <span class="cerrar" onclick="cerrarMensaje()">X</span>
-    Imprint
-Close
-Legal notice
-Owner
-Philipp Silbernagl
-
-Stampflgraben 2
-39100 Bozen - Italien
-
-Mail: philipp@fromnowon.it
-Phone: +393898848902
-PEC: philippsilbernagl@pec.it
-Mwst. Nr.: 03210820217
-
-Legal body responsible for the contents
-Philipp Silbernagl
-
-Concept, Design, Programming & Implementation
-puedes poner la Universidad
-
-Notice of liability
-Despite careful quality control, we take no responsibility for the contents of external links. The sole responsibility for the content of external links websites lies exclusively by the author of the linked website.
-
-Mandatory information Mandatory information according to the EU-Regulation N. 524/2013 of the European Parliament and of the Council Platform for online dispute resolution for consumer disputes (ODR) to the European Commission: https://ec.europa.eu/consumers/odr/
-</div>
-
-<script>
+    <!-- El mensaje emergente -->
+    <div id="mensaje" class="mensaje-emergente">
+        <!-- X para cerrar el mensaje -->
+        <span class="cerrar" onclick="cerrarMensaje()">X</span>
+        Imprint
+    Close
+    Legal notice
+    Owner
+    Philipp Silbernagl
     
-    function mostrarMensaje() {
-        var mensaje = document.getElementById("mensaje");
-        mensaje.style.display = "block"; 
-    }
-
-    // Función para cerrar el mensaje
-    function cerrarMensaje() {
-        var mensaje = document.getElementById("mensaje");
-        mensaje.style.display = "none"; 
-    }
-</script>
-
-</div>
+    Stampflgraben 2
+    39100 Bozen - Italien
+    
+    Mail: philipp@fromnowon.it
+    Phone: +393898848902
+    PEC: philippsilbernagl@pec.it
+    Mwst. Nr.: 03210820217
+    
+    Legal body responsible for the contents
+    Philipp Silbernagl
+    
+    Concept, Design, Programming & Implementation
+    puedes poner la Universidad
+    
+    Notice of liability
+    Despite careful quality control, we take no responsibility for the contents of external links. The sole responsibility for the content of external links websites lies exclusively by the author of the linked website.
+    
+    Mandatory information Mandatory information according to the EU-Regulation N. 524/2013 of the European Parliament and of the Council Platform for online dispute resolution for consumer disputes (ODR) to the European Commission: https://ec.europa.eu/consumers/odr/
+    </div>
+    
+    <script>
+        // Función que muestra el mensaje cuando se presiona el botón
+        function mostrarMensaje() {
+            var mensaje = document.getElementById("mensaje");
+            mensaje.style.display = "block"; // Mostrar el mensaje
+        }
+    
+        // Función para cerrar el mensaje
+        function cerrarMensaje() {
+            var mensaje = document.getElementById("mensaje");
+            mensaje.style.display = "none"; // Ocultar el mensaje
+        }
+    </script>
 </body>
 </html>
