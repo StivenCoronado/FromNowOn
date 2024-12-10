@@ -9,6 +9,7 @@ body {
     align-items: flex-start; /* Alinea el contenido en la parte superior */
     height: 100vh;
     flex-direction: column; /* Asegura que el título esté encima del carrusel */
+    overflow: hidden;
   }
   
   /* Título */
@@ -82,7 +83,7 @@ body {
     transform: translateX(-50%) perspective(1500px);
     transform-style: preserve-3d;
     animation: autoRun 16s linear infinite;
-    z-index: -1;
+    z-index: 1;
   }
   
   @keyframes autoRun {
@@ -114,7 +115,7 @@ body {
   
   /* Efecto de opacidad y brillo para las imágenes */
   .banner .slider .item img {
-    opacity: 0.8;
+    opacity: 0.9;
     filter: brightness(1.2); /* Brillo por defecto */
   }
   
@@ -130,7 +131,7 @@ body {
   
   /* Cuando se hace hover sobre la imagen, el logo se va hacia atrás */
   .banner .slider .item img:hover {
-    z-index: 5; /* El logo queda detrás de la imagen */
+    z-index: 0; /* El logo queda detrás de la imagen */
   }
   
   /* Logo en el centro */
@@ -139,10 +140,10 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 5; /* El logo se coloca por encima de las imágenes */
+    z-index: 0; /* El logo se coloca por encima de las imágenes */
     width: 500px; /* Ajusta el tamaño del logo */
     height: 120px;
-    transition: z-index 0.3s ease; /* Transición suave para el cambio de z-index */
+    
   }
   
   .logo-center img {
