@@ -11,8 +11,7 @@ body {
     flex-direction: column; /* Asegura que el título esté encima del carrusel */
     overflow: hidden;
   }
-  
-  /* Título */
+
   .title {
     font-size: 2em;
     font-family: 'Arial', sans-serif;
@@ -51,7 +50,7 @@ body {
 
 /* Estilo para el enlace activo */
 .sidebar a.active {
-    background-color: #000; /* Fondo oscuro */
+    background-color: #fababc; /* Fondo oscuro */
     color: white; /* Texto blanco cuando el enlace está activo */
 }
 
@@ -82,7 +81,7 @@ body {
     left: 45%;
     transform: translateX(-50%) perspective(1500px);
     transform-style: preserve-3d;
-    animation: autoRun 16s linear infinite;
+    animation: autoRun 30s linear infinite;
     z-index: 1;
   }
   
@@ -178,11 +177,11 @@ body {
   
   .close {
     color: #fff;
-    font-size: 36px;
+    font-size: 50px;
     font-weight: bold;
     position: absolute;
-    top: 10px;
-    right: 50px;
+    top: 21px;
+    right: 200px;
     cursor: pointer;
     z-index: 1001;
   }
