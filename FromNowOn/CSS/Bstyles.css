@@ -156,13 +156,13 @@ body {
     align-items: center;         
     margin-top: 25vh;            
     margin-bottom: -15%;         
-    width: 70%;                
+    width: 15%;                
     max-width: 30em;           
     height: auto;               
     opacity: 0;                
     animation: aparecer 2s ease-out forwards; 
     z-index: 5;
-    margin-left: 10%;        
+    margin-left: 28%;        
 }
 
 .texto-1 img {
