@@ -236,17 +236,18 @@ body {
     color: rgb(0, 0, 0);
     border: 2px solid #000000; 
     border-radius: 5px;
-    margin-top: 10px; 
+    margin-top: 210px; 
     font-size: 1rem; 
     position: relative; 
     left: 190px; 
     max-width: 90%;
+    text-align: justify;
 }
 
 .cerrar {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 0px;
+    right: 1px;
     font-size: 1.2rem; 
     cursor: pointer;
     font-weight: bold;
@@ -300,6 +301,3 @@ body {
         font-size: 1.5rem; 
     }
 }
-
-    
-
