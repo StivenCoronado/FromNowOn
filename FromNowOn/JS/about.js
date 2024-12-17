@@ -2,18 +2,33 @@ document.addEventListener("DOMContentLoaded", function () {
   const prevButtons = document.querySelectorAll('.arrow.prev');
   const nextButtons = document.querySelectorAll('.arrow.next');
   const carousels = document.querySelectorAll('.carousel');
+  const titles = document.querySelectorAll('.section-title-inline-family, .section-title-inline-clients');
+
+  function toggleVisibilityOnScroll() {
+      const scrollTop = window.scrollY;
+
+      if (scrollTop > 0) {
+          carousels.forEach(carousel => carousel.style.opacity = "1");
+          titles.forEach(title => title.style.opacity = "1");
+      } else {
+          carousels.forEach(carousel => carousel.style.opacity = "0");
+          titles.forEach(title => title.style.opacity = "0");
+      }
+  }
+
+  toggleVisibilityOnScroll();
+
+  window.addEventListener("scroll", toggleVisibilityOnScroll);
 
   function moveCarousel(carousel, direction) {
       const content = carousel.querySelector('.carousel-content');
-      
+
       if (direction === 'next') {
-          // Mover el primer elemento al final
           content.appendChild(content.firstElementChild);
-          content.style.transform = "translateX(0)"; // Mantiene la posición sin transición
+          content.style.transform = "translateX(0)";
       } else if (direction === 'prev') {
-          // Mover el último elemento al inicio
           content.insertBefore(content.lastElementChild, content.firstElementChild);
-          content.style.transform = "translateX(0)"; // Mantiene la posición sin transición
+          content.style.transform = "translateX(0)";
       }
   }
 
