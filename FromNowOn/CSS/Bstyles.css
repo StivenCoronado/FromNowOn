@@ -17,10 +17,10 @@ body {
 
 @keyframes aparecer {
     0% {
-        opacity: 0; /* Inicialmente invisible */
+        opacity: 0; 
     }
     100% {
-        opacity: 1; /* Finaliza completamente visible */
+        opacity: 1; 
     }
 }
 
@@ -52,14 +52,14 @@ body {
     height: auto;
     z-index: 2;
     margin: 0% 0% 0%;
-    transition: transform 0.3s ease; /* Agrega una transición suave */
+    transition: transform 0.3s ease;
 }
 
 .contact-1 a img:hover,
 .contact-2 a img:hover,
 .contact-3 a img:hover,
 .contact-4 a img:hover {
-    transform: scale(1.5); /* Escala la imagen al 110% */
+    transform: scale(1.5);
 }
 
 @media (max-width: 768px) {
@@ -151,54 +151,53 @@ body {
 
 
 .texto-1 {
-    display: flex;               /* Usamos flexbox para centrar el contenido */
-    justify-content: center;     /* Centra la imagen horizontalmente */
-    align-items: center;         /* Centra la imagen verticalmente */
-    margin-top: 25vh;            /* Ajusta el espacio superior según el tamaño de la pantalla */
+    display: flex;               
+    justify-content: center;     
+    align-items: center;         
+    margin-top: 25vh;            
     margin-bottom: -15%;         
-    width: 70%;                 /* Ajustamos el ancho a un porcentaje relativo */
-    max-width: 30em;            /* Tamaño máximo para pantallas grandes */
-    height: auto;               /* La altura se ajusta automáticamente según el contenido */
-    opacity: 0;                 /* Comienza invisible */
-    animation: aparecer 2s ease-out forwards; /* Aparecer durante 2 segundos */
+    width: 70%;                
+    max-width: 30em;           
+    height: auto;               
+    opacity: 0;                
+    animation: aparecer 2s ease-out forwards; 
     z-index: 5;
-    margin-left: 10%;           /* Centra el contenido horizontalmente en pantallas grandes */
+    margin-left: 10%;        
 }
 
 .texto-1 img {
-    width: 290%;                 /* La imagen se ajusta al 100% del contenedor */
+    width: 290%;                 
     height: auto; 
-    margin-top: 5%;               /* Mantiene las proporciones de la imagen */
+    margin-top: 5%;  
 }
 
-/* Ajustes responsivos */
 @media (max-width: 1024px) {
     .texto-1 {
-        margin-top: 15vh; /* Menos margen superior para pantallas medianas */
-        margin-left: 5%;  /* Alineación más centrada */
-        width: 80%;       /* Mayor tamaño en pantallas más pequeñas */
+        margin-top: 15vh;
+        margin-left: 5%; 
+        width: 80%;       
     }
     .texto-1 img {
-        width: 100%;      /* Asegura que la imagen ocupe todo el ancho disponible */
+        width: 100%;     
     }
 }
 
 @media (max-width: 768px) {
     .texto-1 {
-        margin-top: 20vh; /* Mayor margen superior para pantallas aún más pequeñas */
-        width: 90%;       /* Aumenta el tamaño relativo de la imagen */
+        margin-top: 20vh;
+        width: 90%;     
         margin-left: 5%;
     }
 }
 
 @media (max-width: 480px) {
     .texto-1 {
-        margin-top: 25vh; /* Aumenta aún más el margen superior */
-        width: 95%;       /* La imagen toma casi todo el ancho disponible */
-        margin-left: 5%;  /* Alineación centrada en pantallas móviles */
+        margin-top: 25vh; 
+        width: 95%;    
+        margin-left: 5%; 
     }
     .texto-1 img {
-        width: 100%;      /* La imagen siempre ocupa el 100% del ancho disponible */
+        width: 100%;     
     }
 }
 
@@ -212,9 +211,6 @@ body {
         opacity: 1;
     }
 }
-/*sirve el boton*/
-
-
 
 .boton {
     padding: 10px 20px;
@@ -222,40 +218,36 @@ body {
     color: white;
     border: none;
     border-radius: 5px;
-    font-size: 1rem;  /* Usamos rem en lugar de px para mayor flexibilidad */
+    font-size: 1rem; 
     cursor: pointer;
-
-    /* Posicionamiento fijo en la parte inferior izquierda */
     position: fixed;
-    bottom: 2%; /* Espacio desde la parte inferior de la pantalla */
-    left: 5%; /* Espacio desde el borde izquierdo de la pantalla */
+    bottom: 2%; 
+    left: 5%;
 }
 
-/* Estilo del botón cuando se pasa el cursor por encima */
 .boton:hover {
     background-color: #333333;
 }
 
 .mensaje-emergente {
-    display: none; /* Ocultar el mensaje inicialmente */
+    display: none; 
     padding: 15px;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
-    border: 2px solid #000000; /* Borde negro */
+    border: 2px solid #000000; 
     border-radius: 5px;
-    margin-top: 10px; /* Distancia hacia abajo */
-    font-size: 1rem; /* Usamos rem para flexibilidad */
-    position: relative; /* Necesario para la posición de la X */
-    left: 190px; /* Ajusta la posición */
-    max-width: 90%; /* Limita el ancho del mensaje emergente */
+    margin-top: 10px; 
+    font-size: 1rem; 
+    position: relative; 
+    left: 190px; 
+    max-width: 90%;
 }
 
-/* Estilo para la X de cierre */
 .cerrar {
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 1.2rem; /* Usamos rem para la flexibilidad */
+    font-size: 1.2rem; 
     cursor: pointer;
     font-weight: bold;
     color: rgb(0, 0, 0);
@@ -265,48 +257,47 @@ body {
     color: #ddd;
 }
 
-/* Media Queries para pantallas pequeñas */
 @media (max-width: 1024px) {
     .boton {
-        bottom: 5%; /* Más espacio desde el fondo en pantallas medianas */
-        left: 5%; /* Mantener la alineación izquierda */
-        font-size: 1.1rem; /* Aumentamos el tamaño de la fuente ligeramente */
+        bottom: 5%; 
+        left: 5%; 
+        font-size: 1.1rem; 
     }
 
     .mensaje-emergente {
-        left: 15px; /* Ajustamos la posición de la ventana emergente */
-        max-width: 80%; /* Más pequeño en pantallas medianas */
+        left: 15px; 
+        max-width: 80%; 
     }
 }
 
 @media (max-width: 768px) {
     .boton {
-        bottom: 5%; /* Más espacio en la parte inferior */
-        left: 5%; /* Alineación similar */
-        font-size: 1.2rem; /* Aumentamos aún más el tamaño de la fuente */
+        bottom: 5%; 
+        left: 5%; 
+        font-size: 1.2rem; 
     }
 
     .mensaje-emergente {
-        left: 10px; /* Mantener la posición más centrada */
-        max-width: 85%; /* Ajuste para pantallas más pequeñas */
+        left: 10px; 
+        max-width: 85%; 
     }
 }
 
 @media (max-width: 480px) {
     .boton {
-        bottom: 5%; /* Ajuste para pantallas pequeñas */
-        left: 10%; /* Ajuste para alineación mejor en móviles */
-        font-size: 1.5rem; /* Más grande en dispositivos móviles */
+        bottom: 5%; 
+        left: 10%; 
+        font-size: 1.5rem; 
     }
 
     .mensaje-emergente {
-        left: 5px; /* Menos desplazamiento a la izquierda */
-        max-width: 90%; /* Asegura que el mensaje no se desborde */
-        font-size: 1rem; /* Tamaño adecuado para pantallas pequeñas */
+        left: 5px; 
+        max-width: 90%; 
+        font-size: 1rem; 
     }
 
     .cerrar {
-        font-size: 1.5rem; /* Aumentamos el tamaño de la X en móviles */
+        font-size: 1.5rem; 
     }
 }
 

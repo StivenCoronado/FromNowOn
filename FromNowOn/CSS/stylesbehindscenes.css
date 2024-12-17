@@ -1,14 +1,13 @@
-/* Fondo y texto */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #000; /* Fondo negro */
-    color: #fff; /* Texto blanco */
+    background-color: #000; 
+    color: #fff;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Alinea el contenido en la parte superior */
+    align-items: flex-start; 
     height: 100vh;
-    flex-direction: column; /* Asegura que el título esté encima del carrusel */
+    flex-direction: column;
     overflow: hidden;
   }
 
@@ -19,10 +18,9 @@ body {
     margin: 20px 0;
     text-align: center;
     z-index: 3;
-    width: 100%; /* Asegura que el título ocupe todo el ancho */
+    width: 100%;
   }
-  
-/* Sidebar */
+
 .sidebar {
     position: fixed;
     top: 50%;
@@ -35,32 +33,27 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Estilo de los enlaces en el sidebar */
 .sidebar a {
     padding: 10px;
     text-decoration: none;
     color: black;
-    writing-mode: vertical-rl; /* Mantiene el texto en formato vertical */
+    writing-mode: vertical-rl; 
     text-orientation: mixed;
     font-weight: bold;
     text-align: center;
     border-bottom: 1px solid black;
-    transition: background-color 0.3s; /* Agrega transición suave al hover */
+    transition: background-color 0.3s;
 }
 
-/* Estilo para el enlace activo */
 .sidebar a.active {
-    background-color: #fababc; /* Fondo oscuro */
-    color: white; /* Texto blanco cuando el enlace está activo */
+    background-color: #fababc; 
+    color: white; 
 }
 
-/* Efecto hover en los enlaces */
 .sidebar a:hover {
-    background-color: #ffacbc; /* Fondo rosado cuando se pasa el mouse */
+    background-color: #ffacbc; 
 }
 
-  
-  /* Banner y slider */
   .banner {
     width: 100%;
     height: 100vh;
@@ -69,15 +62,15 @@ body {
     overflow: hidden;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Alinea el carrusel en la parte superior */
-    padding-top: 30px; /* Agrega un espacio en la parte superior para no superponerse al título */
+    align-items: flex-start;
+    padding-top: 30px; 
   }
   
   .banner .slider {
     position: absolute;
-    width: 200px; /* Incrementa el tamaño para hacer el círculo más amplio */
+    width: 200px; 
     height: 300px;
-    top: 15%; /* Ajusta este valor para subir el carrusel más cerca de la parte superior */
+    top: 15%;
     left: 45%;
     transform: translateX(-50%) perspective(1500px);
     transform-style: preserve-3d;
@@ -99,48 +92,45 @@ body {
     inset: 0 0 0 0;
     transform: 
         rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
-        translateZ(650px); /* Ajusta este valor para abrir más el círculo */
-        z-index: 2; /* Aseguramos que las imágenes tengan un z-index inicial */
+        translateZ(650px);
+        z-index: 2; 
       }
   
   .banner .slider .item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px; /* Bordes redondeados opcionales */
-    border: 2px solid #fababc; /* Borde blanco de 5px */
+    border-radius: 10px; 
+    border: 2px solid #fababc; 
 
   }
-  
-  /* Efecto de opacidad y brillo para las imágenes */
+ 
   .banner .slider .item img {
     opacity: 0.9;
-    filter: brightness(1.2); /* Brillo por defecto */
+    filter: brightness(1.2); 
   }
   
   .banner .slider .item img.highlight {
-    opacity: 1; /* Totalmente visible cuando se pasa el mouse */
-    filter: brightness(1.5); /* Aumenta el brillo al pasar el mouse */
+    opacity: 1; 
+    filter: brightness(1.5); 
   }
   
   .banner .slider .item img:hover {
-    transform: scale(1.1); /* Agranda la imagen */
-    z-index: 10; /* Trae la imagen al frente cuando hover */
+    transform: scale(1.1); 
+    z-index: 10; 
   }
-  
-  /* Cuando se hace hover sobre la imagen, el logo se va hacia atrás */
+
   .banner .slider .item img:hover {
-    z-index: 0; /* El logo queda detrás de la imagen */
+    z-index: 0; 
   }
-  
-  /* Logo en el centro */
+
   .logo-center {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 0; /* El logo se coloca por encima de las imágenes */
-    width: 500px; /* Ajusta el tamaño del logo */
+    z-index: 0; 
+    width: 500px; 
     height: 120px;
     
   }
@@ -150,17 +140,17 @@ body {
     height: 100%;
     object-fit: contain;
   }
-  /* Estilo para el modal */
+
   .modal {
-    display: none; /* Ocultar el modal por defecto */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
-    overflow: auto; /* Hacer scroll si la imagen es demasiado grande */
+    background-color: rgba(0, 0, 0, 0.8); 
+    overflow: auto; 
     justify-content: center;
     align-items: center;
     padding: 20px;
@@ -170,9 +160,9 @@ body {
     width: 80%;
     height: auto;
     object-fit: contain;
-    max-width: 550px; /* Limitar el tamaño máximo de la imagen */
-    border: 2px solid rgb(255, 255, 255); /* Borde leve y sutil */
-    border-radius: 10px; /* Bordes redondeados opcionales */
+    max-width: 550px; 
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px; 
   }
   
   .close {
