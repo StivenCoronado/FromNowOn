@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const audioSrc = record.getAttribute("data-audio");
             sessionStorage.setItem("selectedAudio", audioSrc);
             sessionStorage.setItem("isPlaying", "true");
-            window.location.href = "index.html";
+            window.location.href = "HTML/home.html";
         });
     });
 });

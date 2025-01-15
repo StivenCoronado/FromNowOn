@@ -57,7 +57,6 @@ thumbnailItems.forEach(item => {
         const vimeoUrl = mediaElement.getAttribute('data-vimeo-url');
         const globalAudio = document.getElementById("global-audio");
 
-        // Pausar la música al abrir el overlay
         if (globalAudio && !globalAudio.paused) {
             globalAudio.pause();
         }
@@ -135,7 +134,6 @@ overlay.addEventListener('click', (event) => {
             existingIframe.remove(); 
         }
 
-        // Reanudar la música global al cerrar el overlay
         const globalAudio = document.getElementById("global-audio");
         if (globalAudio && sessionStorage.getItem("isPlaying") === "true") {
             globalAudio.play().catch((error) => {
@@ -167,19 +165,15 @@ document.querySelector('.close-button').addEventListener('click', () => {
     }
 });
 
-
-// Selecciona todos los elementos de tipo
 const projectTypes = document.querySelectorAll('.content .type');
 
-// Agrega un evento de clic a cada uno de ellos
 projectTypes.forEach((type, index) => {
     type.addEventListener('click', () => {
-        // Selecciona el thumbnail correspondiente al índice
+
         const correspondingThumbnail = thumbnailItems[index];
         const mediaElement = correspondingThumbnail.querySelector('img, video');
         const vimeoUrl = mediaElement.getAttribute('data-vimeo-url');
 
-        // Pausar la música al abrir el overlay
         const globalAudio = document.getElementById("global-audio");
         if (globalAudio && !globalAudio.paused) {
             globalAudio.pause();
@@ -214,7 +208,7 @@ projectTypes.forEach((type, index) => {
             overlay.appendChild(iframe);
         } else if (mediaElement.tagName.toLowerCase() === 'video') {
             const videoOverlay = document.createElement('video');
-            videoOverlay.src = mediaElement.src; // Cambia mediaSrc a mediaElement.src
+            videoOverlay.src = mediaElement.src;
             videoOverlay.controls = true;
             videoOverlay.style.maxWidth = '60%';
             videoOverlay.style.maxHeight = '60%';
@@ -224,7 +218,7 @@ projectTypes.forEach((type, index) => {
             overlay.appendChild(videoOverlay);
             videoOverlay.play();
         } else {
-            fullscreenImage.src = mediaElement.src; // Cambia mediaSrc a mediaElement.src
+            fullscreenImage.src = mediaElement.src; 
             fullscreenImage.style.display = 'block';
         }
 
