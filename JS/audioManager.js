@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    if (window.location.pathname.includes("indexhtml")) {
+    if (window.location.pathname.includes("index.html")) {
         return;
     }
 
