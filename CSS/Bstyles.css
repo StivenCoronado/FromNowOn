@@ -227,10 +227,9 @@ h1 {
     font-size: 0.2cm; 
     position: fixed; 
     bottom: 0;      
-    left: 0;    
-    right: 0;   
+    left: 20%;      
     z-index: 9999;     text-align: justify;
-    max-width: 100%; 
+    max-width: 80%; 
     box-sizing: border-box; 
 }
 
